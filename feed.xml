@@ -15,7 +15,12 @@ layout: null
 	{% assign post_image = post.image.path | default: post.image %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-        <description><![CDATA[<img loading="lazy" src="{{ post_image | xml_escape }}"/> {{{ post.content }}}]]></description>
+        <description>
+			<![CDATA[
+				<img loading="lazy" src="{{{ post_image | xml_escape }}}" />
+				{{{ post.content | xml_escape }}}
+			]]>
+		</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
