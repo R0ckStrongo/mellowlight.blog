@@ -14,7 +14,10 @@ layout: null
     {% for post in site.posts limit:10 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
+        <description>{{ post.content | xml_escape }}
+			{% assign post_image = post.image.path | default: post.image %}
+			<img fetchpriority="high" decoding="async" src="{{ post_image | xml_escape }}"/>
+		</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
@@ -24,8 +27,7 @@ layout: null
         {% for cat in post.categories %}
         <category>{{ cat | xml_escape }}</category>
         {% endfor %}
-		{% assign post_image = post.image.path | default: post.image %}
-		<img fetchpriority="high" decoding="async" src="{{ post_image | xml_escape }}"/>
+		
       </item>
     {% endfor %}
   </channel>
