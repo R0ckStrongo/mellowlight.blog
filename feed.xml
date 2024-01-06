@@ -25,12 +25,7 @@ layout: null
         <category>{{ cat | xml_escape }}</category>
         {% endfor %}
 		{% assign post_image = post.image.path | default: post.image %}
-		  {% if post_image %}
-			{% unless post_image contains "://" %}
-			  {% assign post_image = post_image | absolute_url %}
-			{% endunless %}
-			<figure><img fetchpriority="high" decoding="async" src="{{ post_image | xml_escape }}"/></figure>
-		  {% endif %}
+		<img fetchpriority="high" decoding="async" src="{{ post_image | xml_escape }}"/>
       </item>
     {% endfor %}
   </channel>
