@@ -13,11 +13,10 @@ layout: null
     <generator>Jekyll v{{ jekyll.version }}</generator>
     {% for post in site.posts limit:10 %}
       <item>
+		{% assign post_image = post.image.path | default: post.image %}
+		<img loading="lazy" src="{{ post_image | xml_escape }}"/>
         <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}
-			{% assign post_image = post.image.path | default: post.image %}
-			<figure><img fetchpriority="high" decoding="async" src="{{ post_image | xml_escape }}"/></figure>
-		</description>
+        <description>{{ post.content | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
