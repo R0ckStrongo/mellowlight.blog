@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+
+		<title>{{ page.title }} | {{site.name}}</title>
+
+		{% seo %}
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
+		<link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
+	</head>
+	<!--
+{% if jekyll.environment == 'production' %}
+<!-- change your GA id in _config.yml-->
+	<!--
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', '{{site.google_analytics}}', 'auto');
+ga('send', 'pageview');
+</script>
+{% endif %}
+-->
+
+	<script data-goatcounter="https://mellowlight.goatcounter.com/count"
+			async src="//gc.zgo.at/count.js"></script>
+	{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+	<body class="{{layout}}">
+
+
+
+		<!-- Begin Menu Navigation
+================================================== -->
+		<!-- Header -->
+		<header id="header">
+			<nav role="navigation" class="top-right open">
+				<a href="https://mellowlight.de/" class="disc l1"><div>Home</div></a>
+				<a href="https://mellowlight.de/gallery.html" class="disc l2"><div>Gallerie</div></a>
+				<a href="https://mellowlight.de/about.html" class="disc l3"><div>Über uns</div></a>
+				<a href="https://mellowlight.de/services.html" class="disc l4"><div>Angebote</div></a>
+				<a href="https://mellowlight.de/#fragen" class="disc l5"><div>FAQ</div></a>
+				<a href="https://mellowlight.de/#kontakt" class="disc l6"><div>Kontakt</div></a>
+				<a class="disc l7 toggle" id="navbar">
+					<svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#0f0817}</style><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+				</a>
+			</nav>
+			<div class="logo"><a href="https://mellowlight.de/">
+				<img class="logo" src="{{ site.baseurl }}/assets/images/Mellowlight-Neon-Logo.png" alt="Mellowlight Wedding Photography"/>
+				<span>Fotografie Blog</span></a></div>
+
+		</header>
+		<!-- End Navigation
+================================================== -->
+
+		<section id="main">
+			<div class="inner">
+				<section class="wrapper style1">
+					{% include search-lunr.html %}
+					<!-- Site Title
+================================================== 
+<div class="mainheading">
+<h1 class="sitetitle">{{ site.name }}</h1>
+<p class="lead">
+{{ site.description }}
+</p>
+</div>
+-->
+					<!-- Content
+================================================== -->
+					<div class="main-content">
+						{{ content }}
+					</div>
+
+					{% if site.mailchimp-list %}
+					<!-- Bottom Alert Bar
+================================================== -->
+					<div class="alertbar">
+						<div class="container text-center">
+							<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+							<form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+								<div class="mc-field-group">
+									<input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+									<input type="submit" value="Subscribe" name="subscribe" class="heart">
+								</div>
+							</form>
+						</div>
+					</div>
+					{% endif %}
+
+				</section>
+			</div>
+		</section>
+
+		<!-- Categories Jumbotron
+================================================== -->
+		<div class="jumbotron fortags">
+			<div class="d-md-flex h-100">
+				<div class="col-md-4 transpdark align-self-center text-center h-100">
+					<div class="d-md-flex align-items-center justify-content-center h-100">
+						<h2 class="d-md-block align-self-center py-1 font-weight-light">Kategorien erkunden <span class="d-none d-md-inline">→</span></h2>
+					</div>
+				</div>
+				<div class="col-md-8 p-5 align-self-center text-center">
+					{% assign categories_list = site.categories %}
+					{% if categories_list.first[0] == null %}
+					{% for category in categories_list %}
+					<a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category | url_escape | strip | replace: ' ', '-' }}">{{ category | camelcase }} ({{ site.tags[category].size }})</a>
+					{% endfor %}
+					{% else %}
+					{% for category in categories_list %}
+					<a class="mt-1 mb-1" href="{{site.baseurl}}/categories#{{ category[0] | url_escape | strip | replace: ' ', '-' }}">{{ category[0] | camelcase }} ({{ category[1].size }})</a>
+					{% endfor %}
+					{% endif %}
+					{% assign categories_list = nil %}
+				</div>
+			</div>
+		</div>
+
+		<!-- Begin Footer
+================================================== -->
+		<footer id="footer">
+			<div class="container">
+				<ul class="icons">
+					<li><a href="https://www.instagram.com/mellowlight.wedding/" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+					<li><a href="mailto:kontakt@mellowlight.de" class="icon fa-envelope-o"><span class="label" target="_blank">Email</span></a></li>
+					<li><a href="https://wa.me/+4915753301238" class="icon fa-whatsapp"><span class="label" target="_blank">Whatsapp</span></a></li>
+				</ul>
+			</div>
+		</footer>
+		<div class="footerlinks">
+			Weiteres, wie Portraits, Newborn Fotografie und Business Shoots findest du auf  
+			<a href="https://portraits.mellowlight.de/">portraits.mellowlight.de</a>
+			<br/><br/>
+			<img src="{{ site.baseurl }}/assets/images/lgbtq-plus-pride-flag.webp" alt="LGBTQ+ Flagge" loading="lazy"/>Love is Love 
+
+		</div>
+		<div class="copyright">
+			Copyright Mellowlight 2024 | 
+			<a href="https://mellowlight.de/datenschutz.html">Datenschutz</a> | 
+			<a href="https://mellowlight.de/impressum.html">Impressum</a>
+			<!--a class="cookiesettings" aria-label="Cookie Einstellungen">🍪</a-->
+		</div>
+		<!-- End Footer
+================================================== -->
+
+		<!-- /.site-content -->
+
+		<!-- Scripts
+================================================== -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		<script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/jquery.poptrox.min.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/util.js"></script>
+		<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+		<script defer src="{{ site.baseurl }}/assets/js/back-to-top.js"></script>
+		<script defer src="{{ site.baseurl }}/assets/js/navmenu.js"></script>
+		{% if site.lazyimages == "enabled" %}
+		<script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
+		{% endif %}
+
+		<script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script> 
+
+		{% if page.layout == 'post' %}
+		<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+		{% endif %}
+
+	</body>
+</html>
