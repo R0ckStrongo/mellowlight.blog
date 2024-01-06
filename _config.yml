@@ -1,10 +1,10 @@
 # Site
 name: "Fotografie Blog x Mellowlight"
 title: "Fotografie Blog x Mellowlight"
-description: "Jekyll template, Medium styled, free for bloggers."
+description: "Erlebe Fotografie in einem neuen Licht. Unsere Beiträge nehmen dich mit zu einzigartigen Locations, spannenden Events und beleuchten interessante Themen rund um die (Hochzeits-) Fotografie."
 logo: 'assets/images/Mellowlight_NeonLogo.png'
 favicon: 'assets/images/logo.png'
-baseurl: 
+baseurl: https://r0ckstrongo.github.io/mellowlight.blog
 #google_analytics: ''
 disqus: 'demowebsite'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
@@ -21,7 +21,7 @@ authors:
     #email: wowthemesnet@gmail.com
     #web: https://www.wowthemes.net
     #twitter: https://twitter.com/wowthemesnet
-    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
+    description: "Fotografin bei Mellowlight"
   moaten:
     name: moaten
     display_name: Martin    
@@ -30,7 +30,7 @@ authors:
     #email: wowthemesnet@gmail.com
     #web: https://www.wowthemes.net
     #twitter: https://twitter.com/wowthemesnet
-    description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
+    description: "Fotograf bei Mellowlight"
 
 # Plugins
 plugins:
