@@ -305,7 +305,9 @@ span.post-read-more a:hover {
 
 .mainheading h1.posttitle {
     font-weight: 700;
+	font-size: 1.3rem;
     margin-bottom: 1rem;
+	margin-top: 1rem;
 }
 
 .footer {
