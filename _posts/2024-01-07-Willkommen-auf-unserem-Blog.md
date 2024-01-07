@@ -2,8 +2,8 @@
 layout: post
 title:  'Willkommen auf unserem Blog'
 author: moaten
-categories: [ Fotografie, Fotobearbeitung ]
-tags: [Lightroom, Photoshop]
+categories: [ Info, Über uns ]
+tags: []
 image: https://r0ckstrongo.github.io/mellowlight.blog/assets/images/posts/test-post.jpeg
 description: "Erster Post unseres neuen Blogs"
 featured: true
