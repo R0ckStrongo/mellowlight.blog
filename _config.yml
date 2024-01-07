@@ -6,7 +6,7 @@ logo: 'assets/images/Mellowlight_NeonLogo.png'
 favicon: 'assets/images/logo.png'
 baseurl: https://r0ckstrongo.github.io/mellowlight.blog
 #google_analytics: ''
-disqus: 'demowebsite'
+disqus: 'blog-mellowlight'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
 permalink: /:title/

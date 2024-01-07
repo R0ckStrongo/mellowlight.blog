@@ -3250,7 +3250,7 @@ header p {
     display: flex;
     align-items: stretch; /* Default */
     justify-content: space-between;
-    width: 100%;
+    width: inherit;
     margin: 0;
     padding: 0;
 }
@@ -4024,8 +4024,8 @@ header p {
 nav {
     display: block;
     position: fixed;
-    width: 700px;
-    height: 700px;
+    width: 800px;
+    height: 800px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -4040,7 +4040,7 @@ nav.open {
     transform: translate3d(-25px, 10px, 0);
 }
 nav.top-right {
-    top: -260px;
+    top: -270px;
     right: -260px;
 }
 
@@ -4116,7 +4116,7 @@ a.disc{
     left: 50px;
     right: 50px;
     bottom: 50px;
-    background: rgb(121, 16, 198,0.5);
+    background: rgb(119, 17, 198, 0.5);
     transition-delay: 0.1s;
 }
 .open .l2 {
@@ -4142,7 +4142,7 @@ a.disc{
     left: 100px;
     right: 100px;
     bottom: 100px;
-    background: rgb(137,15,204,0.6);
+    background: rgb(133, 16, 203, 0.6);
     transition-delay: 0.2s;
 }
 .open .l3 {
@@ -4168,7 +4168,7 @@ a.disc{
     left: 150px;
     right: 150px;
     bottom: 150px;
-    background: rgb(169,13,216,0.7);
+    background: rgb(146, 16, 208, 0.7);
     transition-delay: 0.3s;
 }
 .open .l4 {
@@ -4194,7 +4194,7 @@ a.disc{
     left: 200px;
     right: 200px;
     bottom: 200px;
-    background: rgb(169,13,216,0.8);
+    background: rgb(159, 15, 214, 0.8);
     transition-delay: 0.4s;
 }
 .open .l5 {
@@ -4220,7 +4220,7 @@ a.disc{
     left: 250px;
     right: 250px;
     bottom: 250px;
-    background: rgb(185,12,222,0.9);
+    background: rgb(173, 14, 219, 0.9);
     transition-delay: 0.5s;
 }
 .open .l6 {
@@ -4246,7 +4246,7 @@ a.disc{
     left: 300px;
     right: 300px;
     bottom: 300px;
-    background: rgb(198,12,228,1);
+    background: rgb(186, 13, 223, 1);
     transition-delay: 0.6s;
 }
 .open .l7 {
@@ -4266,6 +4266,33 @@ a.disc{
 .open .l7.toggle {
     transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 0deg);
 }
+
+.l8 {
+    top: 350px;
+    left: 350px;
+    right: 350px;
+    bottom: 350px;
+    background: rgb(199, 12, 228, 1);
+    transition-delay: 0.6s;
+}
+.open .l8 {
+    transition-delay: 0.6s;
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 180deg);
+    opacity: 1;
+}
+.open .l8:hover {
+    background: shade(#C60CE4, 90%);
+    color: #bbb;
+    transition-delay: 0s;
+}
+.open .l8:active {
+    background: shade(#C60CE4, 50%);
+    color: #C60CE4;
+}
+.open .l8.toggle {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 0deg);
+}
+
 
 .toggle {
     line-height: 100px;
