@@ -8,7 +8,7 @@ image: https://r0ckstrongo.github.io/mellowlight.blog/assets/images/posts/test-p
 description: "Erster Post unseres neuen Blogs"
 featured: true
 ---
-# Herzlich Willkommen bei unserem neuen Hochzeitsfotografie-Blog vom Mellowlight!
+# Herzlich Willkommen bei unserem neuen Hochzeitsfotografie-Blog von Mellowlight!
 
 Hallo liebe Leserinnen und Leser,
 
