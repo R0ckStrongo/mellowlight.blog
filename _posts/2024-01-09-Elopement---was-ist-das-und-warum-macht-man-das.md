@@ -4,7 +4,7 @@ title:  'Elopement - was ist das und warum macht man das'
 author: mc
 categories: [ Info, Hochzeit ]
 tags: [elopement, reise]
-image: https://blog.mellowlight.de/assets/images/brautpaar-rennt-strand.webp
+image: https://blog.mellowlight.de/assets/images/posts/brautpaar-rennt-strand.webp
 description: "Was ist ein Elopement und wieso macht man das?"
 featured: false
 ---
