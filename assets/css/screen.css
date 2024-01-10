@@ -12,12 +12,12 @@ License: https://www.wowthemes.net/freebies-license/
 }
 
 a {
-    color: #00ab6b;
+    color: #C60CE4;
     transition: all 0.2s;
 }
 
 a:hover {
-    color: #038252;
+    color: #6911C0;
     text-decoration: none;
 }
 
@@ -878,4 +878,10 @@ iframe {
 .lazyimg[data-srcset] {
     opacity: 0;
     transition: opacity .25s;
+}
+
+/** Overwrite **/
+.badge .badge-danger #badge-404{
+	color: #fff !important;
+	background-color: #C60CE4 !important;
 }
