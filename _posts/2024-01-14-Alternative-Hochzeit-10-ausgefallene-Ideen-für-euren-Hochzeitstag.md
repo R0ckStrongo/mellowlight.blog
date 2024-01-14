@@ -4,7 +4,7 @@ title:  'Alternative Hochzeit: 10 ausgefallene Ideen für euren Hochzeitstag'
 author: mc
 categories: [ Inspiration, Hochzeit ]
 tags: [alternative Hochzeit, liste]
-image: https://blog.mellowlight.de/assets/images/posts/hochzeit-location-wald.webp
+image: https://blog.mellowlight.de/assets/images/posts/hochzeit-location-park.webp
 description: "Was ist eine Destination Wedding und wieso macht man das?"
 featured: true
 ---
@@ -27,7 +27,7 @@ Zeigt eure Handwerkskunst und Individualität, indem ihr viele Dekorationen und 
 Warum in einem herkömmlichen Setting heiraten, wenn es so viele ungewöhnliche Orte gibt? Fabriken, Kunstmuseen, Leuchttürme oder sogar eine Tropfsteinhöhle - die Location kann einen großen Einfluss auf die Stimmung eurer Hochzeit haben. Die Möglichkeiten sind endlos und warten nur darauf, von euch entdeckt zu werden.
 
 **5. Essen und Trinken:**
-
+![Foodtruck mit Schildern](https://blog.mellowlight.de/assets/images/posts/foodtruck.webp)
 Verwöhnt eure Gäste mit einem unkonventionellen Menü. Cupcake-Stand statt Kuchen-Buffet, Foodtrucks mit Streetfood oder ein gemeinsames Picknick im Freien können die kulinarische Erfahrung auf eurer Hochzeit unvergesslich machen. Und wer sagt, dass eine Hochzeitstorte süß sein muss? Eine deftige Käsetorte als Alternative zur klassischen Käseplatte ist ein garantierter Blickfang.
 
 **6. Musik und Unterhaltung:**
