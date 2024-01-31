@@ -6,7 +6,7 @@ categories: [ Inspiration, Hochzeit ]
 tags: [After Wedding, Hochzeitszeitung]
 image: https://blog.mellowlight.de/assets/images/posts/hochzeitszeitung-auf-tisch.webp
 description: "Was ist eine Hochzeitszeitung und wie kann man die Klassische Hochzeitszeitung verbessern"
-featured: false
+featured: true
 ---
 Hochzeitszeitungen sind eine schöne Möglichkeit, auch den Hochzeitstag selbst in einer einzigartigen und persönlichen Weise festzuhalten. Sie bieten die Möglichkeit, nicht nur Fotos, sondern auch Geschichten und Erinnerungen zu teilen. Doch eine unserer Ansicht nach vertane Chance im Zusammenhang mit Hochzeitszeitungen ist, dass sie in der Regel am Tag der Hochzeit verkauft werden. Das ist auch verständlich, denn so kann jeder Gast direkt ein Exemplar erwerben und der Hochzeitskasse Aufschwung geben.
 

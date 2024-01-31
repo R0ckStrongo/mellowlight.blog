@@ -6,7 +6,7 @@ categories: [ Inspiration, Hochzeit ]
 tags: [alternative Hochzeit, liste]
 image: https://blog.mellowlight.de/assets/images/posts/hochzeit-location-park.webp
 description: "Was ist eine Destination Wedding und wieso macht man das?"
-featured: true
+featured: false
 ---
 Für Paare, die sich in vielen Dingen von der Masse abheben, ist es nur natürlich, dass auch ihre Hochzeit anders sein sollte. Wenn ihr zu den alternativen Paaren gehört, die das Übliche meiden und nach Wegen suchen, euren besonderen Tag auf einzigartige Weise zu gestalten, dann seid ihr hier genau richtig. Dieser Artikel ist für euch!
 
