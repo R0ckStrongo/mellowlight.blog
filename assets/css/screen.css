@@ -885,3 +885,7 @@ iframe {
 	color: #fff !important;
 	background-color: #C60CE4 !important;
 }
+
+.toggle svg{
+    margin-top: 0 ! important;
+}
