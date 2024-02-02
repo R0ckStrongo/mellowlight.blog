@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  'Ein Plädoyer an die After-Wedding Zeitung: Warum Hochzeitszeitungen oft zu früh erscheinen'
+title:  'Ein Plädoyer an die After-Wedding Zeitung: Die bessere Alternative zur Hochzeitszeitungen'
 author: mc
 categories: [ Inspiration, Hochzeit ]
 tags: [After Wedding, Hochzeitszeitung]
 image: https://blog.mellowlight.de/assets/images/posts/hochzeitszeitung-auf-tisch.webp
-description: "Was ist eine Hochzeitszeitung und wie kann man die Klassische Hochzeitszeitung verbessern"
+description: "Was ist eine Hochzeitszeitung und wie kann man die Klassische Hochzeitszeitung verbessern. Eine alternative ist die After Wedding Zeitung"
 featured: true
 ---
 Hochzeitszeitungen sind eine schöne Möglichkeit, auch den Hochzeitstag selbst in einer einzigartigen und persönlichen Weise festzuhalten. Sie bieten die Möglichkeit, nicht nur Fotos, sondern auch Geschichten und Erinnerungen zu teilen. Doch eine unserer Ansicht nach vertane Chance im Zusammenhang mit Hochzeitszeitungen ist, dass sie in der Regel am Tag der Hochzeit verkauft werden. Das ist auch verständlich, denn so kann jeder Gast direkt ein Exemplar erwerben und der Hochzeitskasse Aufschwung geben.
