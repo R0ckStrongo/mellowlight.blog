@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'Ein Plädoyer an die After-Wedding Zeitung: Die bessere Alternative zur Hochzeitszeitungen'
+title:  'Die After-Wedding Zeitung: Die bessere Alternative zur Hochzeitszeitung'
 author: mc
 categories: [ Inspiration, Hochzeit ]
 tags: [After Wedding, Hochzeitszeitung]
