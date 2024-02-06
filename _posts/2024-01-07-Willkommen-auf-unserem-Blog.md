@@ -6,7 +6,7 @@ categories: [ Info, Über uns ]
 tags: []
 image: https://r0ckstrongo.github.io/mellowlight.blog/assets/images/posts/test-post.jpeg
 description: "Erster Post unseres neuen Blogs"
-featured: true
+featured: false
 ---
 # Herzlich Willkommen bei unserem neuen Hochzeitsfotografie-Blog von Mellowlight!
 

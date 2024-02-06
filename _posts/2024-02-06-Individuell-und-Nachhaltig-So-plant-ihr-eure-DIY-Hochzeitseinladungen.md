@@ -6,7 +6,7 @@ categories: [ Hochzeitsplanung, DIY-Ideen ]
 tags: [DoItYourself, Einladungskarte]
 image: https://blog.mellowlight.de/assets/images/posts/DIY-Hochzeitseinladung.webp
 description: "Nachhaltige Hochzeitseinladungen selbst gemacht. Mit DIY Geld sparen, die Umwelt schonen und den Gästen alle wichtigen Details mitteilen."
-featured: false
+featured: true
 ---
 Das Datum steht fest, die Location ist gebucht? Jetzt steht das Einladen von Gästen auf der Tagesordnung. Doch wie fängt man an und vor allem, welche Infos brauchen eure Gäste?
 DIY-Einladungen sind eine tolle Alternative zu gekauften Karten oder Druckvorlagen, die das Hochzeitsbudget schonen und eurer Kreativität Ausdruck verleihen. 
