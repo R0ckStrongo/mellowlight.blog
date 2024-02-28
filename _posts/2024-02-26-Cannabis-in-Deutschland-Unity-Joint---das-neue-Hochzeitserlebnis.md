@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'Cannabis in Deutschland: Unity Joint - das neue Hochzeitserlebnis?'
+title:  'Cannabis in Deutschland: Unity Joint - der neue Hochzeitstrend?'
 author: mc
 categories: [ Info, Inspiration, Hochzeitsplanung ]
 tags: [AlternativeHochzeit, WeedWedding, GrasHochzeit, UnityJoint, Hochzeitsfeier, Cannabis, kiffen]
