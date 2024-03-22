@@ -2,7 +2,7 @@
 layout: post
 title:  'Individuell und nachhaltig: So plant ihr eure DIY-Hochzeitseinladungen'
 author: mc
-categories: [ Hochzeitsplanung, DIY-Ideen ]
+categories: [ Info, Inspiration, Hochzeitsplanung, DIY-Ideen ]
 tags: [DoItYourself, Einladungskarte]
 image: https://blog.mellowlight.de/assets/images/posts/DIY-Hochzeitseinladung.webp
 description: "Nachhaltige Hochzeitseinladungen selbst gemacht. Mit DIY Geld sparen, die Umwelt schonen und den Gästen alle wichtigen Details mitteilen."
@@ -47,3 +47,6 @@ Wenn ihr eine Website plant, dann habt ihr den Vorteil, dass nicht jedes Detail 
 - Bitte um Rückmeldung / RSVP bis Stichtag
 - Frage nach Diätwünschen (z.B. vegan, laktose- oder glutenintolerant)
 - Geschenkwünsche
+
+
+In unserem Artikel [Hilfreiche Tipps für DIY Hochzeitseinladungen](https://blog.mellowlight.de/Einladungen-mit-Stil-Hilfreiche-Tipps-für-DIY-Hochzeitseinladungen/) gehen wir auf wertvolle Tipps und kleine Helfer ein, damit euch die Gestaltung eurer einzigartigen Einladungen kinderleicht gelingt.
