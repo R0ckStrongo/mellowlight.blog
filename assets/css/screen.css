@@ -889,3 +889,7 @@ iframe {
 .toggle svg{
     margin-top: 0 ! important;
 }
+
+h2, h3, h4, h5, h6{
+	font-family: itc-american-typewriter;
+}
