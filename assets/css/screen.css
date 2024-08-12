@@ -890,11 +890,15 @@ iframe {
     margin-top: 0 ! important;
 }
 
-h2.card-text > a, h4.card-text{
+h2 a, h4.card-text{
 	font-family: itc-american-typewriter;
 	font-weight: 500;
 }
 
 h1, h2{
 	font-size: 1.5rem;
+}
+
+#header>.logo {
+    margin: 0rem 0 1rem;
 }
