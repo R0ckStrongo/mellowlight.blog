@@ -890,6 +890,7 @@ iframe {
     margin-top: 0 ! important;
 }
 
-h2, h3, h4, h5, h6{
+h2.card-text a, h4.card-text, h5, h6{
 	font-family: itc-american-typewriter;
+	font-weight: 500;
 }
