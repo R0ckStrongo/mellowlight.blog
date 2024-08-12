@@ -899,6 +899,10 @@ h1, h2{
 	font-size: 1.5rem;
 }
 
-#header>.logo {
-    margin: 0rem 0 1rem;
+#header>div.logo {
+    margin: 0 0 1rem 0;
+}
+
+.logo .flood {
+	color: black;
 }
