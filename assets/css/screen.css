@@ -903,6 +903,6 @@ h1, h2{
     margin: 0 0 1rem 0;
 }
 
-.logo .flood {
+.logo div#flood {
 	color: black;
 }
