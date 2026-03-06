@@ -888,7 +888,7 @@ iframe {
     font-weight: 300;
     color: #111;
     position: static;
-    padding-top: 60px;
+    padding-top: 100px;
     text-decoration:  none;
 }
 
@@ -926,8 +926,11 @@ iframe {
 
 @media (max-width: 768px) {
     #header .blog-title {
-    font-size: 1.75rem;
-    letter-spacing: 4px;
+        font-size: 1.75rem;
+        letter-spacing: 4px;
+    }
+    .blog-headline{
+        padding-top: 40px;
     }
 }
 
