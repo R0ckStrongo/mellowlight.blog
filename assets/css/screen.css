@@ -11,16 +11,6 @@ License: https://www.wowthemes.net/freebies-license/
     padding: 1rem 0rem;
 }
 
-a {
-    color: #C60CE4;
-    transition: all 0.2s;
-}
-
-a:hover {
-    color: #6911C0;
-    text-decoration: none;
-}
-
 pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -883,13 +873,13 @@ iframe {
 /** Overwrite **/
 .badge .badge-danger #badge-404{
 	color: #fff !important;
-	background-color: #C60CE4 !important;
+	background-color: #6f6f6f !important;
 }
 
 .toggle svg{
     margin-top: 0 ! important;
 }
-
+/*
 h2 a, h4.card-text{
 	font-family: itc-american-typewriter;
 	font-weight: 500;
@@ -906,3 +896,4 @@ h1, h2{
 .logo div#flood {
 	color: black;
 }
+*/
