@@ -270,7 +270,7 @@ span.post-read-more a:hover {
 .mediumnavigation .form-inline .btn:hover,
 .mediumnavigation .form-inline .btn:active {
     background: transparent;
-    color: green;
+    color: #3a2230;
 }
 
 .mediumnavigation .navbar-brand {
@@ -517,8 +517,8 @@ ul.tags li a:hover {
 }
 
 .btn.follow {
-    border-color: #02b875;
-    color: #1c9963;
+    border-color: #3a2230;
+    color: #3a2230;
     padding: 3px 10px;
     text-align: center;
     border-radius: 999em;
@@ -527,8 +527,8 @@ ul.tags li a:hover {
 }
 
 .btn.subscribe {
-    background-color: #1c9963;
-    border-color: #1c9963;
+    background-color: #3a2230;
+    border-color: #3a2230;
     color: rgba(255, 255, 255, 1);
     fill: rgba(255, 255, 255, 1);
     border-radius: 30px;
@@ -772,7 +772,7 @@ iframe {
 
 .jumbotron.fortags a {
     padding: 5px 10px 7px;
-    background: #eee8f5;
+    background: #fff;
     border-radius: 30px;
     color: #0f0817;
     font-weight: 500;
@@ -883,13 +883,21 @@ iframe {
     margin-top: 0 ! important;
 }*/
 
-.blog-headline {
+.blog-headline{
     font-family: "futura-pt", sans-serif;
     font-weight: 300;
     color: #111;
     position: static;
     padding-top: 60px;
     text-decoration:  none;
+}
+
+.blog-headline > a {
+    text-decoration:  none;
+}
+
+.blog-headline > a:hover {
+    color:#111;
 }
 #header .blog-brand {
     font-size: 2rem;
