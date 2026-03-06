@@ -889,6 +889,7 @@ iframe {
     color: #111;
     position: static;
     padding-top: 100px;
+    padding-bottom: 40px;
     text-decoration:  none;
 }
 
