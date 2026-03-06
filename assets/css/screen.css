@@ -880,8 +880,9 @@ iframe {
 .blog-headline{
     font-family: "futura-pt", sans-serif;
 	font-weight: 300;
-    
     color:#111;
+    position: static;
+    padding-top: 60px;
 }
 .blog-brand{
     font-size: 2rem;
@@ -904,7 +905,10 @@ iframe {
     font-size: 3rem;
     letter-spacing: 5px;
 }
-    
+
+    .navbar{
+        transform: none;
+    }
 /*
 h2 a, h4.card-text{
 	font-family: itc-american-typewriter;
