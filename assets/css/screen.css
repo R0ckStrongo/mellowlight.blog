@@ -892,11 +892,13 @@ iframe {
     text-decoration:  none;
 }
 
-.blog-headline > a {
+.blog-brand > a,
+.blog-title > a{
     text-decoration:  none;
 }
 
-.blog-headline > a:hover {
+.blog-brand > a:hover,
+.blog-title > a:hover{
     color:#111;
 }
 #header .blog-brand {
