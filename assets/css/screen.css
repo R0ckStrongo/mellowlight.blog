@@ -744,9 +744,7 @@ iframe {
         padding: 0;
         height: 350px;
         border-radius: 0;
-        background-image: url(../images/stacked-waves-2.svg);
-        background-size: cover;
-    }
+        background-color: 6f6f6f;
 
     .jumbotron.fortags .col-md-4 {
         background: rgba(255, 255, 255, 0.75);
@@ -762,8 +760,7 @@ iframe {
     margin-top: 3rem;
     padding: 0;
     border-radius: 0;
-    background-image: url(../images/stacked-waves-2.svg);
-    background-size: cover;
+    background-color: 6f6f6f;
 	margin-bottom: 0px;
 }
 
@@ -879,6 +876,35 @@ iframe {
 .toggle svg{
     margin-top: 0 ! important;
 }
+
+.blog-headline{
+    font-family: "futura-pt", sans-serif;
+	font-weight: 300;
+    
+    color:#111;
+}
+.blog-brand{
+    font-size: 2rem;
+    letter-spacing: 5px;
+}
+
+.blog-subtitle{
+    font-size: 1rem;
+    margin-top: -10px;
+    color:#6f6f6f;
+}
+.line {
+  width: 120px;
+  height: 0;
+  border: 1px solid #6f6f6f;
+  display:inline-block;
+}
+
+.blog-title{
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+    
 /*
 h2 a, h4.card-text{
 	font-family: itc-american-typewriter;
