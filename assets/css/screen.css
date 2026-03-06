@@ -142,9 +142,11 @@ section.recent-posts {
 
 .listfeaturedtag h4.card-text,
 .listrecent h4.card-text {
-    color: rgba(0, 0, 0, 0.44);
+    color: #6f6f6f;
     font-size: 0.95rem;
     line-height: 1.6;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-style: normal;
     font-weight: 400;
 }
 
@@ -887,6 +889,7 @@ iframe {
     color: #111;
     position: static;
     padding-top: 60px;
+    text-decoration:  none;
 }
 #header .blog-brand {
     font-size: 2rem;
@@ -908,6 +911,14 @@ iframe {
 #header .blog-title {
     font-size: 3rem;
     letter-spacing: 5px;
+    max-width: 95%;
+}
+
+@media (max-width: 768px) {
+    #header .blog-title {
+    font-size: 1.75rem;
+    letter-spacing: 4px;
+    }
 }
 
 .navbar {
