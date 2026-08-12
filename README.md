@@ -3,9 +3,6 @@
 Das redaktionelle Journal von Mellowlight. Läuft mit Jekyll, wird von GitHub
 Actions gebaut und auf GitHub Pages unter **blog.mellowlight.de** veröffentlicht.
 
-Diese Anleitung ist für Marie-Claire und Martin geschrieben. Programmierkenntnisse
-sind nicht nötig — wer eine Textdatei speichern kann, kann einen Artikel schreiben.
-
 ---
 
 ## Inhalt
