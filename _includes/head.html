@@ -1,0 +1,222 @@
+{%- comment -%}
+  Everything the crawlers and the social cards need, in one place.
+
+  jekyll-seo-tag was removed on purpose: it cannot express a linked JSON-LD
+  @graph, and it fights custom Open Graph tags. This is longer, but it is
+  explicit and it produces exactly one structured-data block per page.
+{%- endcomment -%}
+
+{%- assign author_key = page.author | default: 'mc-martin' -%}
+{%- assign author = site.data.authors[author_key] -%}
+
+{%- comment -%} Title: seo_title wins, then title, then the site name. {%- endcomment -%}
+{%- if page.seo_title -%}
+  {%- assign page_title = page.seo_title -%}
+{%- elsif page.title -%}
+  {%- assign page_title = page.title | append: ' | Mellowlight Journal' -%}
+{%- else -%}
+  {%- assign page_title = site.title | append: ' – ' | append: site.tagline -%}
+{%- endif -%}
+
+{%- assign page_description = page.seo_description | default: page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 -%}
+{%- assign canonical = page.canonical | default: page.url | absolute_url -%}
+
+{%- if page.hero_image -%}
+  {%- assign social_image = page.hero_image | absolute_url -%}
+{%- else -%}
+  {%- assign social_image = '/assets/images/journal-social.jpg' | absolute_url -%}
+{%- endif -%}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_description }}">
+<link rel="canonical" href="{{ canonical }}">
+
+{%- comment -%}
+  Thin taxonomy pages stay crawlable and useful to readers, but they are kept
+  out of the index so they cannot dilute the site (§20). jekyll-archives sets
+  page.type and page.posts on every archive page, so the decision is made here
+  rather than duplicated in each layout.
+{%- endcomment -%}
+{%- assign thin_tag = false -%}
+{%- if page.type == 'tag' and page.posts.size < site.tag_index_threshold -%}
+  {%- assign thin_tag = true -%}
+{%- endif -%}
+{%- if page.noindex or thin_tag -%}
+<meta name="robots" content="noindex, follow">
+{%- else -%}
+<meta name="robots" content="index, follow, max-image-preview:large">
+{%- endif -%}
+
+<meta property="og:type" content="{% if page.layout == 'article' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="Mellowlight Journal">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page_description }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ social_image }}">
+{%- if page.hero_image_width and page.hero_image_height %}
+<meta property="og:image:width" content="{{ page.hero_image_width }}">
+<meta property="og:image:height" content="{{ page.hero_image_height }}">
+{%- endif %}
+{%- if page.hero_image_alt %}
+<meta property="og:image:alt" content="{{ page.hero_image_alt }}">
+{%- endif %}
+{%- if page.layout == 'article' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{%- if page.last_modified_at %}
+<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+{%- endif %}
+<meta property="article:author" content="{{ author.name }}">
+{%- for cat in page.categories %}
+{%- assign section = site.data.categories | where: 'key', cat | first %}
+{%- if section %}
+<meta property="article:section" content="{{ section.label }}">
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ social_image }}">
+
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+<link rel="alternate" type="application/atom+xml" title="Mellowlight Journal" href="{{ '/feed.xml' | absolute_url }}">
+
+{%- comment -%}
+  Only the two faces that render above the fold are preloaded. Preloading all
+  seven would compete with the hero image for bandwidth and hurt LCP.
+{%- endcomment -%}
+<link rel="preload" href="/assets/fonts/futura-pt-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/zen-kaku-gothic-new-v18-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin>
+{%- if page.hero_image %}
+<link rel="preload" as="image" href="{{ page.hero_image }}"{% if page.hero_image_srcset %} imagesrcset="{{ page.hero_image_srcset }}" imagesizes="100vw"{% endif %} fetchpriority="high">
+{%- endif %}
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+{%- comment -%}
+  Structured data as one linked graph. Organization and WebSite carry stable
+  @ids so the Journal's articles resolve back to the same publisher entity the
+  main site declares (§33, §36). Nothing here describes content the page does
+  not actually show.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.main_site }}/#organization",
+      "name": "Mellowlight",
+      "url": "{{ site.main_site }}",
+      "description": "Hochzeitsfotografie und Film aus Unterfranken",
+      "areaServed": "Deutschland"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}",
+      "name": "Mellowlight Journal",
+      "inLanguage": "de-DE",
+      "publisher": { "@id": "{{ site.main_site }}/#organization" }
+    }
+    {%- if page.layout == 'article' -%},
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ canonical }}#article",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "publisher": { "@id": "{{ site.main_site }}/#organization" },
+      "mainEntityOfPage": "{{ canonical }}",
+      "url": "{{ canonical }}",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page_description | jsonify }},
+      "inLanguage": "de-DE",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      {%- if page.hero_image %}
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ page.hero_image | absolute_url }}"
+        {%- if page.hero_image_width %},
+        "width": {{ page.hero_image_width }},
+        "height": {{ page.hero_image_height }}
+        {%- endif %}
+      },
+      {%- endif %}
+      {%- if author.members %}
+      "author": [
+        {%- for member_key in author.members %}
+        {%- assign member = site.data.authors[member_key] %}
+        {
+          "@type": "Person",
+          "@id": "{{ site.url }}/#person-{{ member_key }}",
+          "name": {{ member.name | jsonify }},
+          "jobTitle": {{ member.role | jsonify }}
+          {%- if member.instagram %},
+          "sameAs": [{{ member.instagram | jsonify }}]
+          {%- endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor %}
+      ],
+      {%- else %}
+      "author": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person-{{ author_key }}",
+        "name": {{ author.name | jsonify }},
+        "jobTitle": {{ author.role | jsonify }}
+        {%- if author.instagram %},
+        "sameAs": [{{ author.instagram | jsonify }}]
+        {%- endif %}
+      },
+      {%- endif %}
+      "wordCount": {{ content | strip_html | number_of_words }}
+      {%- if page.tags.size > 0 %},
+      "keywords": {{ page.tags | join: ', ' | jsonify }}
+      {%- endif %}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ canonical }}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Journal",
+          "item": "{{ site.url }}/"
+        }
+        {%- assign primary = page.categories | first -%}
+        {%- if primary -%}
+        {%- assign cat = site.data.categories | where: 'key', primary | first -%}
+        {%- if cat -%},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ cat.label | jsonify }},
+          "item": "{{ site.url }}/kategorie/{{ primary }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ page.title | jsonify }}
+        }
+        {%- endif -%}
+        {%- else -%},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | jsonify }}
+        }
+        {%- endif -%}
+      ]
+    }
+    {%- endif -%}
+  ]
+}
+</script>
+
+{%- comment -%} The existing analytics, unchanged. No cookies, no consent banner needed. {%- endcomment -%}
+<script data-goatcounter="https://blog-mellowlight.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

@@ -1,0 +1,50 @@
+---
+layout: base
+title: "Alle Artikel"
+permalink: /artikel/
+seo_title: "Alle Artikel im Mellowlight Journal"
+seo_description: >-
+  Das vollständige Archiv des Mellowlight Journals: Hochzeitsplanung,
+  Hochzeitsfotografie, echte Hochzeiten und Locations in Unterfranken.
+paginate: true
+---
+
+{%- comment -%}
+  The chronological archive, and the only paginated listing on the site. The
+  homepage is composed editorially and is deliberately not a page-1-of-9 feed.
+{%- endcomment -%}
+
+<div class="container container--narrow section">
+  <h1>Alle Artikel</h1>
+  <p class="lead">Alles, was wir bisher aufgeschrieben haben — vom neuesten Beitrag rückwärts.</p>
+</div>
+
+<div class="container section">
+  <div class="card-grid">
+    {%- for post in paginator.posts -%}
+    {%- assign cat = site.data.categories | where: 'key', post.categories.first | first -%}
+    <article class="card">
+      <a class="card__link" href="{{ post.url | relative_url }}">
+        {%- if post.hero_image %}
+        <div class="card__media">
+          {%- include image.html
+                src=post.hero_image
+                srcset=post.hero_image_srcset
+                alt=post.hero_image_alt
+                sizes='(min-width: 60rem) 22rem, 90vw'
+                class='card__img' -%}
+        </div>
+        {%- endif %}
+        {%- if cat %}<p class="card__eyebrow">{{ cat.label }}</p>{% endif %}
+        <h2 class="card__title">{{ post.title }}</h2>
+        {%- assign lead = post.excerpt | default: post.description -%}
+        {%- if lead %}
+        <p class="card__excerpt">{{ lead | strip_html | strip | truncate: 130 }}</p>
+        {%- endif %}
+      </a>
+    </article>
+    {%- endfor -%}
+  </div>
+
+  {%- include pagination.html -%}
+</div>

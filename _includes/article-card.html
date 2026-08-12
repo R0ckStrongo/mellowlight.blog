@@ -1,0 +1,26 @@
+{%- comment -%}
+  The listing card, used by category pages, tag pages and the archive.
+  Written once so the three never drift apart.
+{%- endcomment -%}
+{%- assign post = include.post -%}
+{%- assign cat = site.data.categories | where: 'key', post.categories.first | first -%}
+<article class="card">
+  <a class="card__link" href="{{ post.url | relative_url }}">
+    {%- if post.hero_image %}
+    <div class="card__media">
+      {%- include image.html
+            src=post.hero_image
+            srcset=post.hero_image_srcset
+            alt=post.hero_image_alt
+            sizes='(min-width: 60rem) 22rem, 90vw'
+            class='card__img' -%}
+    </div>
+    {%- endif %}
+    {%- if cat %}<p class="card__eyebrow">{{ cat.label }}</p>{% endif %}
+    <h2 class="card__title">{{ post.title }}</h2>
+    {%- assign lead = post.excerpt | default: post.description -%}
+    {%- if lead %}
+    <p class="card__excerpt">{{ lead | strip_html | strip | truncate: 130 }}</p>
+    {%- endif %}
+  </a>
+</article>

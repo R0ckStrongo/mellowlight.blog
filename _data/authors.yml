@@ -1,0 +1,33 @@
+# Authors of the Journal.
+# The key is what goes into a post's front matter:  author: mc
+# For a joint piece use:                            author: mc-martin
+
+mc:
+  name: "Marie-Claire"
+  role: "Fotografin bei Mellowlight"
+  bio: >-
+    Marie-Claire fotografiert Hochzeiten mit einem Blick für die kleinen,
+    ungestellten Momente – und schreibt hier über Planung, Rituale und alles,
+    was ein Hochzeitstag mit Menschen macht.
+  avatar: "/assets/images/authors/marie-claire.webp"
+  instagram: "https://www.instagram.com/mellowlight.wedding"
+
+martin:
+  name: "Martin"
+  role: "Fotograf bei Mellowlight"
+  bio: >-
+    Martin erzählt Hochzeiten in Foto und Film. Im Journal schreibt er über
+    Reportagefotografie, Technik und die Frage, wie aus einem Tag eine
+    Geschichte wird.
+  avatar: "/assets/images/authors/martin.webp"
+  instagram: "https://www.instagram.com/mellowlight.wedding"
+
+mc-martin:
+  name: "Marie-Claire & Martin"
+  role: "Mellowlight"
+  bio: >-
+    Wir sind Marie-Claire und Martin. Wir begleiten Hochzeiten in Unterfranken
+    und überall dort, wo ihr feiert – ruhig in der Arbeit, klar in der Ästhetik.
+  avatar: "/assets/images/authors/mellowlight.webp"
+  instagram: "https://www.instagram.com/mellowlight.wedding"
+  members: [mc, martin]

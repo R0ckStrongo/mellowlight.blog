@@ -1,0 +1,36 @@
+{%- comment -%}
+  The only place an <img> is written in this repository.
+
+  Parameters:
+    src      required  path to the original, e.g. /assets/images/posts/x/y.webp
+    alt      required  never derived from a filename, never invented (§16)
+    srcset   optional  built by the gallery plugin; omitted when no derivatives exist
+    width    optional  real pixel width, read from the file header
+    height   optional  real pixel height
+    sizes    optional  defaults to full content width
+    eager    optional  true for the LCP image only
+    class    optional  extra classes
+
+  width and height are always emitted when known, so the browser reserves the
+  correct box before the file arrives. That is what keeps CLS at zero on a
+  sixty-image story.
+{%- endcomment -%}
+
+{%- assign img_sizes = include.sizes | default: '(min-width: 64rem) 46rem, 100vw' -%}
+
+<img
+  {% if include.class %}class="{{ include.class }}" {% endif %}src="{{ include.src | relative_url }}"
+  {%- if include.srcset %}
+  srcset="{{ include.srcset }}"
+  sizes="{{ img_sizes }}"
+  {%- endif %}
+  alt="{{ include.alt | escape }}"
+  {%- if include.width and include.height %}
+  width="{{ include.width }}"
+  height="{{ include.height }}"
+  {%- endif %}
+  {%- if include.eager %}
+  loading="eager" fetchpriority="high" decoding="sync"
+  {%- else %}
+  loading="lazy" decoding="async"
+  {%- endif %}>

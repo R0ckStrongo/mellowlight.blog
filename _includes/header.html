@@ -1,0 +1,54 @@
+{%- comment -%}
+  The header mirrors mellowlight.de's navbar so the Journal reads as the same
+  property: same wordmark, same futura-pt tracking, same translucent bar, same
+  plum "Anfragen" button.
+
+  Two differences, both deliberate. The wordmark carries a JOURNAL suffix so a
+  visitor arriving from a Google result knows where they are, and the nav
+  points back to the main site for everything that is not the Journal — the
+  blog never duplicates those pages.
+{%- endcomment -%}
+
+<header class="masthead">
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a class="nav__brand" href="{{ '/' | relative_url }}">
+      <span class="nav__brand-mellow">MELLOW</span><span class="nav__brand-light">LIGHT</span>
+      <span class="nav__brand-journal">Journal</span>
+    </a>
+
+    <button
+      class="nav__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+      aria-label="Menü öffnen">
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+    </button>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        {%- assign sections = site.data.categories | sort: 'order' -%}
+        {%- for cat in sections limit: 4 %}
+        <li>
+          <a href="{{ '/kategorie/' | append: cat.key | append: '/' | relative_url }}"
+             {% if page.url contains cat.key %}aria-current="page"{% endif %}>{{ cat.label }}</a>
+        </li>
+        {%- endfor %}
+        <li><a href="{{ '/themen/' | relative_url }}">Alle Themen</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a class="nav__search" href="{{ '/suche/' | relative_url }}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.5" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
+          <span>Suche</span>
+        </a>
+        <a class="button button--special" href="{{ site.main_site }}/anfrage.html">Anfragen</a>
+      </div>
+    </div>
+  </nav>
+</header>

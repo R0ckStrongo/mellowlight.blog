@@ -1,0 +1,89 @@
+// ---------------------------------------------------------------------------
+// Cards
+// ---------------------------------------------------------------------------
+// Used in related articles, category listings and the lower half of the
+// homepage. Deliberately not a box: no border, no shadow, no rounded corner,
+// no background. The photograph and the type do the work, which is what stops
+// a listing page turning into the card wall §11 rules out.
+
+.card {
+  position: relative;
+}
+
+.card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card__media {
+  overflow: hidden;
+  margin-block-end: var(--ml-space-sm);
+  background: var(--ml-paper-alt);
+}
+
+.card__img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s var(--ml-ease);
+}
+
+@media (hover: hover) {
+  .card__link:hover .card__img {
+    transform: scale(1.03);
+  }
+}
+
+.card__eyebrow {
+  margin: 0 0 var(--ml-space-3xs);
+  font-family: var(--ml-util);
+  font-weight: 300;
+  font-size: var(--ml-size-xs);
+  letter-spacing: var(--ml-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ml-muted);
+}
+
+.card__title {
+  margin: 0 0 var(--ml-space-2xs);
+  font-size: var(--ml-size-h4);
+  line-height: 1.28;
+  transition: color var(--ml-duration) var(--ml-ease);
+}
+
+.card__link:hover .card__title {
+  color: var(--ml-accent);
+  text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+.card__excerpt {
+  margin: 0;
+  font-size: var(--ml-size-sm);
+  line-height: 1.55;
+  color: var(--ml-muted);
+}
+
+// --- grids ------------------------------------------------------------------
+
+.related__grid,
+.card-grid {
+  display: grid;
+  gap: var(--ml-space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 34rem) {
+  .related__grid,
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 60rem) {
+  .related__grid,
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

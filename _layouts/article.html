@@ -1,0 +1,199 @@
+---
+layout: base
+---
+
+{%- comment -%}
+  One layout, four editorial formats (§13). `type:` in the front matter
+  switches the composition:
+
+    guide     (default)  text-led: standfirst, contents, prose, closing CTA
+    story                photography-led: the hero runs full-bleed, the text is
+                         short and the gallery carries the piece
+    location             a practical panel sits alongside the prose
+    wissen               same as guide, aimed at other photographers
+
+  Adding a fifth format means adding a case here, not a new layout.
+{%- endcomment -%}
+
+{%- assign type = page.type | default: 'guide' -%}
+{%- assign author_key = page.author | default: 'mc-martin' -%}
+{%- assign author = site.data.authors[author_key] -%}
+{%- assign cat_key = page.categories | first -%}
+{%- assign cat = site.data.categories | where: 'key', cat_key | first -%}
+
+{%- comment -%} Reading time is calculated, never typed by an author (§9). {%- endcomment -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign reading_time = words | divided_by: site.words_per_minute | plus: 1 -%}
+
+{%- assign show_toc = content | ml_show_toc -%}
+{%- if page.toc == false %}{% assign show_toc = false %}{% endif -%}
+{%- if page.toc == true %}{% assign show_toc = true %}{% endif -%}
+
+<article class="article article--{{ type }}">
+
+  {%- comment -%} ---------- header ---------- {%- endcomment -%}
+  <header class="article__header {% if type == 'story' %}article__header--story{% endif %}">
+    {%- if type == 'story' and page.hero_image %}
+    <div class="article__hero article__hero--bleed">
+      {%- include image.html
+            src=page.hero_image
+            srcset=page.hero_image_srcset
+            alt=page.hero_image_alt
+            width=page.hero_image_width
+            height=page.hero_image_height
+            sizes='100vw'
+            eager=true
+            class='article__hero-img' -%}
+    </div>
+    {%- endif %}
+
+    <div class="article__intro">
+      <nav class="breadcrumb" aria-label="Brotkrumennavigation">
+        <a href="{{ '/' | relative_url }}">Journal</a>
+        {%- if cat %}
+        <span aria-hidden="true">/</span>
+        <a href="{{ '/kategorie/' | append: cat.key | append: '/' | relative_url }}">{{ cat.label }}</a>
+        {%- endif %}
+      </nav>
+
+      <h1 class="article__title">{{ page.title }}</h1>
+
+      {%- comment -%}
+        `excerpt` is the standfirst shown to the reader; `description` is the
+        meta description shown to Google. They are usually different sentences.
+      {%- endcomment -%}
+      {%- assign standfirst = page.excerpt | default: page.description -%}
+      {%- if standfirst %}
+      <p class="lead article__lead">{{ standfirst | strip_html | strip }}</p>
+      {%- endif %}
+
+      <p class="meta article__meta">
+        <span>{{ author.name }}</span>
+        <span class="meta__sep" aria-hidden="true">·</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d. %B %Y' }}</time>
+        <span class="meta__sep" aria-hidden="true">·</span>
+        <span>{{ reading_time }} Min. Lesezeit</span>
+        {%- if page.location %}
+        <span class="meta__sep" aria-hidden="true">·</span>
+        <span>{{ page.location }}</span>
+        {%- endif %}
+      </p>
+    </div>
+
+    {%- if type != 'story' and page.hero_image %}
+    <div class="article__hero">
+      {%- include image.html
+            src=page.hero_image
+            srcset=page.hero_image_srcset
+            alt=page.hero_image_alt
+            width=page.hero_image_width
+            height=page.hero_image_height
+            sizes='(min-width: 64rem) 62rem, 100vw'
+            eager=true
+            class='article__hero-img' -%}
+      {%- if page.hero_image_caption %}
+      <p class="article__hero-caption">{{ page.hero_image_caption }}</p>
+      {%- endif %}
+    </div>
+    {%- endif %}
+  </header>
+
+  {%- comment -%} ---------- body ---------- {%- endcomment -%}
+  <div class="article__body">
+    {%- if show_toc %}
+    <div class="article__aside">
+      {{ content | ml_toc }}
+    </div>
+    {%- endif %}
+
+    {%- if type == 'location' and page.location_facts %}
+    <aside class="facts" aria-labelledby="facts-heading">
+      <h2 class="eyebrow eyebrow--bare" id="facts-heading">Gut zu wissen</h2>
+      <dl class="facts__list">
+        {%- for fact in page.location_facts %}
+        <div class="facts__row">
+          <dt>{{ fact.label }}</dt>
+          <dd>{{ fact.value }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+    </aside>
+    {%- endif %}
+
+    <div class="prose article__prose">
+      {{ content }}
+    </div>
+  </div>
+
+  {%- comment -%} ---------- photostory ---------- {%- endcomment -%}
+  {%- if page.gallery_blocks %}
+  {%- include gallery.html -%}
+  {%- endif %}
+
+  {%- comment -%} ---------- foot ---------- {%- endcomment -%}
+  <footer class="article__footer">
+    {%- if page.signoff %}
+    <p class="signature">{{ page.signoff }}</p>
+    {%- endif %}
+
+    {%- if page.tags.size > 0 %}
+    <div class="article__tags">
+      <h2 class="visually-hidden">Themen</h2>
+      <ul class="taglist">
+        {%- for tag in page.tags %}
+        <li><a class="tag" href="{{ '/thema/' | append: tag | slugify | append: '/' | relative_url }}">{{ tag }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endif %}
+
+    {%- include share.html -%}
+
+    <div class="article__author">
+      <p class="eyebrow eyebrow--bare">Geschrieben von</p>
+      <div class="article__author-row">
+        {%- comment -%}
+          A joint piece shows both portraits; a single byline shows one. The
+          images come from _data/authors.yml, so swapping in real photographs
+          means replacing two files and nothing else.
+        {%- endcomment -%}
+        <div class="article__author-portraits">
+          {%- if author.members -%}
+            {%- for member_key in author.members -%}
+            {%- assign member = site.data.authors[member_key] -%}
+            {%- if member.avatar %}
+            <img class="article__author-img" src="{{ member.avatar | relative_url }}"
+                 alt="Portrait von {{ member.name }}" width="88" height="110"
+                 loading="lazy" decoding="async">
+            {%- endif %}
+            {%- endfor -%}
+          {%- elsif author.avatar %}
+          <img class="article__author-img" src="{{ author.avatar | relative_url }}"
+               alt="Portrait von {{ author.name }}" width="88" height="110"
+               loading="lazy" decoding="async">
+          {%- endif %}
+        </div>
+        <div>
+          <p class="article__author-name">{{ author.name }}</p>
+          <p class="article__author-bio">{{ author.bio }}</p>
+          <p class="article__author-links">
+            <a class="article__author-link" href="{{ site.main_site }}/about.html">Mehr über uns</a>
+            {%- if author.instagram %}
+            <a class="article__author-link" href="{{ author.instagram }}" rel="me noopener" target="_blank">Instagram</a>
+            {%- endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {%- include cta.html
+        variant='closing'
+        eyebrow=page.cta_eyebrow
+        heading=page.cta_heading
+        body=page.cta_body
+        label=page.cta_label
+        href=page.cta_href -%}
+
+  {%- include related.html -%}
+</article>

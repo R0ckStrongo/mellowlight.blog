@@ -1,0 +1,232 @@
+// ---------------------------------------------------------------------------
+// Homepage
+// ---------------------------------------------------------------------------
+
+.home > * {
+  margin-block-start: var(--ml-space-2xl);
+}
+
+// --- masthead ---------------------------------------------------------------
+
+.journal-head {
+  margin-block-start: var(--ml-space-xl);
+}
+
+.journal-head__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em;
+  margin: 0 0 var(--ml-space-md);
+  font-size: clamp(1.75rem, 0.9rem + 3.8vw, 4rem);
+  line-height: 1;
+}
+
+// The wordmark exactly as mellowlight.de sets it: futura-pt 300, uppercase,
+// widely tracked, with LIGHT stepping up to 400. Now that the headlines use
+// the same face, the masthead and the logo are literally the same object —
+// which is what makes it read as a publication's nameplate rather than as a
+// heading that happens to sit above one.
+.journal-head__mellow {
+  font-family: var(--ml-util);
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: var(--ml-track-brand);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.journal-head__mellow em {
+  font-style: normal;
+  font-weight: 400;
+}
+
+// JOURNAL sits at the same size but in the accent, so the two words read as
+// one lockup instead of a title with a subtitle.
+.journal-head__journal {
+  font-family: var(--ml-journal);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 0.8em;
+  letter-spacing: var(--ml-track-head);
+  color: var(--ml-ink);
+}
+
+.journal-head__intro {
+  max-width: 54ch;
+  margin: 0;
+  padding-block-end: var(--ml-space-lg);
+  border-bottom: 1px solid var(--ml-rule);
+  font-size: var(--ml-size-lead);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--ml-ink);
+}
+
+// --- the feature ------------------------------------------------------------
+// One photograph across the full viewport with the type sitting underneath it
+// rather than laid over it. Text on top of a wedding photograph is the single
+// most common way to ruin one, and it forces a scrim that flattens the image.
+
+.feature {
+  width: 100vw;
+  margin-inline-start: 50%;
+  transform: translateX(-50%);
+}
+
+.feature__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.feature__media {
+  overflow: hidden;
+  background: var(--ml-paper-alt);
+}
+
+.feature__img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: cover;
+}
+
+.feature__text {
+  width: min(var(--ml-max), 100% - var(--ml-gutter) * 2);
+  margin-inline: auto;
+  padding-block-start: var(--ml-space-md);
+}
+
+.feature__eyebrow {
+  margin: 0 0 var(--ml-space-2xs);
+  font-family: var(--ml-util);
+  font-weight: 300;
+  font-size: var(--ml-size-xs);
+  letter-spacing: var(--ml-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ml-accent);
+}
+
+.feature__title {
+  max-width: 20ch;
+  margin: 0 0 var(--ml-space-sm);
+  font-size: var(--ml-size-h1);
+  line-height: 1.1;
+  transition: color var(--ml-duration) var(--ml-ease);
+}
+
+.feature__link:hover .feature__title {
+  color: var(--ml-accent);
+  text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+.feature__lead {
+  max-width: 58ch;
+  margin: 0 0 var(--ml-space-sm);
+  font-size: var(--ml-size-lead);
+  font-weight: 300;
+  color: var(--ml-muted);
+}
+
+// --- sections ---------------------------------------------------------------
+// A lead article with a photograph, and up to two follow-ups as text with a
+// small frame. Sections alternate which side the lead sits on. Two unequal
+// things next to each other read as editorial; six equal things read as a grid.
+
+.strand__intro {
+  max-width: 46ch;
+  margin: 0 0 var(--ml-space-lg);
+  font-size: var(--ml-size-base);
+  color: var(--ml-muted);
+}
+
+.strand__body {
+  display: grid;
+  gap: var(--ml-space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60rem) {
+  .strand__body {
+    grid-template-columns: 1.6fr 1fr;
+    gap: var(--ml-space-xl);
+    align-items: start;
+  }
+
+  // The mirrored variant. Source order never changes, so the reading order for
+  // a screen reader or a keyboard stays the same in both directions.
+  .strand--right .strand__lead { order: 2; }
+  .strand--right .strand__list { order: 1; }
+
+  .strand--right .strand__body {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+
+.strand__lead-title {
+  margin: var(--ml-space-2xs) 0 var(--ml-space-2xs);
+  font-size: var(--ml-size-h3);
+  line-height: 1.2;
+  transition: color var(--ml-duration) var(--ml-ease);
+}
+
+.strand__lead .card__link:hover .strand__lead-title {
+  color: var(--ml-accent);
+  text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+.strand__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ml-rule);
+}
+
+.strand__item { border-bottom: 1px solid var(--ml-rule); }
+
+.strand__item-link {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: var(--ml-space-sm);
+  align-items: center;
+  padding-block: var(--ml-space-sm);
+  color: inherit;
+  text-decoration: none;
+}
+
+.strand__thumb {
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--ml-paper-alt);
+}
+
+.strand__thumb .card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.strand__item-title {
+  margin: 0 0 var(--ml-space-3xs);
+  font-size: var(--ml-size-base);
+  line-height: 1.3;
+  transition: color var(--ml-duration) var(--ml-ease);
+}
+
+.strand__item-link:hover .strand__item-title {
+  color: var(--ml-accent);
+  text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+// --- foot -------------------------------------------------------------------
+
+.home__more {
+  display: flex;
+  justify-content: center;
+}

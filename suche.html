@@ -1,0 +1,30 @@
+---
+layout: base
+title: "Suche"
+permalink: /suche/
+search: true
+noindex: true
+seo_title: "Suche im Mellowlight Journal"
+seo_description: "Durchsucht alle Artikel des Mellowlight Journals nach Titel, Thema und Kategorie."
+---
+
+<div class="container container--narrow section">
+  <nav class="breadcrumb" aria-label="Brotkrumennavigation">
+    <a href="{{ '/' | relative_url }}">Journal</a>
+  </nav>
+  <h1>Suche</h1>
+  <p class="lead">Durchsucht das Journal nach Titel, Thema oder Kategorie.</p>
+
+  {%- comment -%}
+    A real label and a real form. Without JavaScript the field is still
+    reachable and the page still explains itself; only the live results are
+    lost (§38).
+  {%- endcomment -%}
+  <div class="search">
+    <label class="search__label" for="search-input">Suchbegriff</label>
+    <input class="search__input" id="search-input" type="search"
+           autocomplete="off" placeholder="z. B. Standesamt, First Look, Schweinfurt">
+    <p class="search__status meta" role="status" aria-live="polite"></p>
+    <ul class="search__results" id="search-results"></ul>
+  </div>
+</div>

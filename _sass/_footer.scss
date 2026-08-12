@@ -1,0 +1,89 @@
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
+
+.footer {
+  margin-block-start: var(--ml-space-3xl);
+  padding-block: var(--ml-space-2xl) var(--ml-space-lg);
+  background: var(--ml-ink);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.footer__inner {
+  display: grid;
+  gap: var(--ml-space-lg);
+  width: min(var(--ml-max), 100% - var(--ml-gutter) * 2);
+  margin-inline: auto;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .footer__inner {
+    grid-template-columns: 1.6fr repeat(3, 1fr);
+    gap: var(--ml-space-xl);
+  }
+}
+
+.footer__wordmark {
+  margin: 0 0 var(--ml-space-xs);
+  font-family: var(--ml-util);
+  font-weight: 300;
+  font-size: 1.4rem;
+  letter-spacing: var(--ml-track-brand);
+  color: #fff;
+}
+
+.footer__wordmark span { font-weight: 400; }
+
+.footer__line {
+  max-width: 34ch;
+  margin: 0 0 var(--ml-space-md);
+  font-size: var(--ml-size-sm);
+  line-height: 1.6;
+}
+
+.footer__heading {
+  margin: 0 0 var(--ml-space-xs);
+  font-family: var(--ml-util);
+  font-style: normal;
+  font-weight: 300;
+  font-size: var(--ml-size-xs);
+  letter-spacing: var(--ml-track-eyebrow);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__nav li + li { margin-block-start: var(--ml-space-3xs); }
+
+.footer__nav a {
+  font-size: var(--ml-size-sm);
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  transition: color var(--ml-duration) var(--ml-ease);
+}
+
+.footer__nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer__legal {
+  width: min(var(--ml-max), 100% - var(--ml-gutter) * 2);
+  margin: var(--ml-space-xl) auto 0;
+  padding-block-start: var(--ml-space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: var(--ml-util);
+  font-size: var(--ml-size-xs);
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer :focus-visible {
+  outline-color: #fff;
+}

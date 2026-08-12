@@ -1,35 +1,34 @@
-<link href="{{ site.baseurl }}/assets/css/brands.min.css" rel="stylesheet">
-  <div class="share sticky-top sticky-top-offset">
-    <p>
-        Teilen
-    </p>
-    <ul>
-        <li class="ml-1 mr-1">
-            <a target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
+{%- comment -%}
+  Four plain links and one button. No SDK, no iframe, no third-party script,
+  no tracking pixel (§28, §29). Copying the link needs a few lines of
+  JavaScript; if it is unavailable the button simply is not shown.
+{%- endcomment -%}
 
-        <li class="ml-1 mr-1">
-            <a target="_blank" href="https://facebook.com/sharer.php?u={{ page.url | absolute_url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
-                <i class="fa fa-facebook"></i>
-            </a>
-        </li>
+{%- assign share_url = page.url | absolute_url -%}
+{%- assign share_title = page.title | uri_escape -%}
 
-        <li class="ml-1 mr-1">
-            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'width=550,height=435');return false;">
-                <i class="fa fa-linkedin-in"></i>
-            </a>
-        </li>
-
-    </ul>
-    {% if page.comments != false %}
-    <div class="sep">
-    </div>
-    <ul>
-        <li>
-        <a class="small smoothscroll" href="#disqus_thread"></a>
-        </li>
-    </ul>
-    {% endif %}
+<div class="share">
+  <h2 class="eyebrow eyebrow--bare">Teilen</h2>
+  <ul class="share__list">
+    <li>
+      <button class="share__item" type="button" data-copy-link data-url="{{ share_url }}" hidden>
+        <span data-copy-label>Link kopieren</span>
+      </button>
+    </li>
+    <li>
+      <a class="share__item" href="https://wa.me/?text={{ share_title }}%20{{ share_url | uri_escape }}"
+         target="_blank" rel="noopener">WhatsApp</a>
+    </li>
+    <li>
+      <a class="share__item" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | uri_escape }}"
+         target="_blank" rel="noopener">Facebook</a>
+    </li>
+    {%- if page.hero_image %}
+    <li>
+      <a class="share__item"
+         href="https://pinterest.com/pin/create/button/?url={{ share_url | uri_escape }}&media={{ page.hero_image | absolute_url | uri_escape }}&description={{ share_title }}"
+         target="_blank" rel="noopener">Pinterest</a>
+    </li>
+    {%- endif %}
+  </ul>
 </div>

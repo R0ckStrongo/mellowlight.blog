@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Search results carry no unique content worth indexing.
+Disallow: /suche/
+
+Sitemap: https://blog.mellowlight.de/sitemap.xml

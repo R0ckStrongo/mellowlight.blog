@@ -1,0 +1,48 @@
+// ---------------------------------------------------------------------------
+// Contextual call to action
+// ---------------------------------------------------------------------------
+// Quiet by design. It reads as an editorial aside, not a banner: no gradient,
+// no border, no urgency, no colour block. A reader should be able to scroll
+// past it without feeling sold to (§25).
+
+.cta {
+  margin-block: var(--ml-space-xl);
+  padding-inline-start: var(--ml-space-md);
+  border-inline-start: 2px solid var(--ml-accent);
+}
+
+.cta__eyebrow {
+  margin: 0 0 var(--ml-space-2xs);
+  font-family: var(--ml-util);
+  font-weight: 300;
+  font-size: var(--ml-size-xs);
+  letter-spacing: var(--ml-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ml-muted);
+}
+
+.cta__heading {
+  max-width: 34ch;
+  margin: 0 0 var(--ml-space-sm);
+  font-family: var(--ml-display);
+  font-style: normal;
+  font-size: var(--ml-size-h3);
+  line-height: 1.3;
+}
+
+.cta__body {
+  max-width: 48ch;
+  margin: 0 0 var(--ml-space-md);
+  font-size: var(--ml-size-base);
+  color: var(--ml-muted);
+}
+
+// The closing CTA gets a little more room, because it is the last thing on the
+// page rather than an interruption in the middle of one.
+.cta--closing {
+  margin-block: var(--ml-space-2xl) var(--ml-space-xl);
+}
+
+.cta--inline {
+  margin-block: var(--ml-space-lg);
+}

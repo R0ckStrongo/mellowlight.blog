@@ -1,0 +1,36 @@
+{%- comment -%}
+  Scored by _plugins/ml_related.rb, not "latest three". If nothing scores
+  above zero the block does not render at all — an irrelevant suggestion is
+  worse than none (§23).
+{%- endcomment -%}
+
+{%- if page.related_posts and page.related_posts.size > 0 -%}
+<section class="related section" aria-labelledby="related-heading">
+  <h2 class="eyebrow" id="related-heading">Weitere Artikel</h2>
+  <div class="related__grid">
+    {%- for post in page.related_posts -%}
+    {%- assign cat_key = post.categories | first -%}
+    {%- assign cat = site.data.categories | where: 'key', cat_key | first -%}
+    <article class="card">
+      <a class="card__link" href="{{ post.url | relative_url }}">
+        {%- if post.hero_image %}
+        <div class="card__media">
+          {%- include image.html
+                src=post.hero_image
+                srcset=post.hero_image_srcset
+                alt=post.hero_image_alt
+                sizes='(min-width: 64rem) 22rem, 90vw'
+                class='card__img' -%}
+        </div>
+        {%- endif %}
+        {%- if cat %}<p class="card__eyebrow">{{ cat.label }}</p>{% endif %}
+        <h3 class="card__title">{{ post.title }}</h3>
+        {%- if post.excerpt or post.description %}
+        <p class="card__excerpt">{{ post.description | default: post.excerpt | strip_html | truncate: 120 }}</p>
+        {%- endif %}
+      </a>
+    </article>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}

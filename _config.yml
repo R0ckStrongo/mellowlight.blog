@@ -1,74 +1,105 @@
-# Site
-name: "Alternativer Hochzeits und Fotografie Blog x Mellowlight"
-title: "Alternativer Hochzeits und Fotografie Blog x Mellowlight"
-description: "In unserem Blog bieten wir Inspirationen für alternative und ausgefallene Hochzeiten, sowie professionelle Fotografie-Tipps. Von unkonventionellen Ideen bis hin zu praktischen Ratschlägen - Bei Mellowlight geht es um Euch!"
-logo: 'assets/images/Mellowlight_NeonLogo.png'
-favicon: 'assets/images/logo.png'
-baseurl: https://blog.mellowlight.de
-url: https://blog.mellowlight.de
-#google_analytics: ''
-disqus: 'blog-mellowlight'
-#mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
-include: ["_pages"]
+# ---------------------------------------------------------------------------
+# Mellowlight Journal
+# ---------------------------------------------------------------------------
+
+title: "Mellowlight Journal"
+tagline: "Hochzeiten, Fotografie und alles dazwischen"
+description: >-
+  Das Journal von Mellowlight: ehrliche Antworten zur Hochzeitsplanung,
+  echte Hochzeiten aus Unterfranken und ein Blick hinter unsere Fotografie.
+
+url: "https://blog.mellowlight.de"
+baseurl: ""
+
+# The main site. Every internal link to mellowlight.de goes through this,
+# so the domain is never hardcoded in a template.
+main_site: "https://mellowlight.de"
+
+lang: de
+timezone: Europe/Berlin
+
+# ---------------------------------------------------------------------------
+# URLs
+# ---------------------------------------------------------------------------
+# The Journal lives on its own subdomain, so articles sit at the root:
+# blog.mellowlight.de/wie-viel-zeit-braucht-eine-hochzeitsreportage/
+# `:title` honours the `slug:` front matter when it is set, which is how
+# authors get clean lowercase URLs without renaming files.
+
 permalink: /:title/
 
-# Authors
-authors:
-  mc:
-    name: mc
-    display_name: Marie-Claire
-    avatar: 'assets/images/avatar-marie-claire.svg'
-    #gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    #email: wowthemesnet@gmail.com
-    #web: https://www.wowthemes.net
-    twitter: https://www.instagram.com/thenoodleofdeath
-    description: "Fotografin bei Mellowlight"
-  moaten:
-    name: moaten
-    display_name: Martin    
-    avatar: 'assets/images/avatar-martin.svg'
-    #gravatar: b1cc14991db7a456fcd761680bbc8f81
-    #email: wowthemesnet@gmail.com
-    #web: https://www.wowthemes.net
-    twitter: https://www.instagram.com/r0ck_strongo
-    description: "Fotograf bei Mellowlight"
+# ---------------------------------------------------------------------------
+# Content
+# ---------------------------------------------------------------------------
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-archives
-    
-# Archives
+defaults:
+  - scope: { path: "", type: "posts" }
+    values:
+      layout: article
+      author: mc-martin
+
+# ---------------------------------------------------------------------------
+# Taxonomy
+# ---------------------------------------------------------------------------
+# Category labels, descriptions and SEO copy live in _data/categories.yml.
+# Posts reference categories by their key.
+
 jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
   permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
-paginate: 12
-paginate_path: /page:num/
-    
-# Other
-markdown: kramdown
+    category: "/kategorie/:name/"
+    tag: "/thema/:name/"
 
+# A tag needs at least this many articles before it is indexed by search
+# engines. Thinner tag pages still render and still work — they just carry
+# noindex, so they cannot dilute the site.
+tag_index_threshold: 3
+
+paginate: 12
+paginate_path: "/artikel/seite:num/"
+
+# ---------------------------------------------------------------------------
+# Build
+# ---------------------------------------------------------------------------
+
+# Jekyll normally invents an excerpt from the first paragraph. That would make
+# the standfirst repeat the opening line of every article, so it is switched
+# off: `excerpt:` is empty unless an author actually writes one.
+excerpt_separator: ""
+
+markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+  auto_ids: true            # required for the table of contents
+  hard_wrap: false
+  smart_quotes: ["sbquo", "lsquo", "bdquo", "ldquo"]   # German „quotes"
 
-# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
-adsense: "disabled"
-adsense-data-ad-client: "ca-pub-3412143450191416"
-adsense-data-ad-slot: "1363087678"
+sass:
+  style: compressed
+  sourcemap: never
 
-# Lazy Images ("enabled" or "disabled")
-lazyimages: "enabled"
+plugins:
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+feed:
+  path: /feed.xml
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE.txt
+  - docker-compose.yml
+  - vendor
+  - .bundle
+
+# Reading time is calculated, never typed by hand.
+words_per_minute: 200

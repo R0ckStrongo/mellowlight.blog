@@ -1,0 +1,72 @@
+// ---------------------------------------------------------------------------
+// Fonts
+// ---------------------------------------------------------------------------
+// All four faces are served from this repository. No Google Fonts, no Adobe
+// Fonts loader, no third-party request — which is what keeps the Journal
+// cookie-free and fast (§29, §37).
+//
+// Only the faces that actually appear above the fold are preloaded; see
+// _includes/head.html.
+
+@font-face {
+  font-family: "Zen Kaku Gothic New";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/fonts/zen-kaku-gothic-new-v18-latin_latin-ext-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zen Kaku Gothic New";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/zen-kaku-gothic-new-v18-latin_latin-ext-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Zen Kaku Gothic New";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/zen-kaku-gothic-new-v18-latin_latin-ext-700.woff2") format("woff2");
+}
+
+// Playfair Display is no longer referenced by any rule: headlines moved to
+// futura-pt. The declaration stays so the face is one line away if it is ever
+// wanted back, and a face nothing uses is never downloaded. If you want the
+// file gone too, delete this block and
+// assets/fonts/playfair-display-italic-400.woff2 together.
+@font-face {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/playfair-display-italic-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "futura-pt";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url("/assets/fonts/futura-pt-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "futura-pt";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/assets/fonts/futura-pt-400.woff2") format("woff2");
+}
+
+// Used once per article at most, for the sign-off. Loaded lazily by design:
+// font-display: optional means it never blocks or shifts anything.
+@font-face {
+  font-family: "Tirelessly Love You";
+  font-style: normal;
+  font-weight: 400;
+  //font-display: optional;
+  src: url("/assets/fonts/tirelessly-love-you.woff2") format("woff2");
+}

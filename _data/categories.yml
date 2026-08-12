@@ -1,0 +1,103 @@
+# The six sections of the Journal.
+#
+# `key` is what a post writes in its front matter:  categories: [hochzeitsplanung]
+# Everything else — the label on screen, the page title, the meta description,
+# the homepage order — is defined here once and never repeated in a template.
+#
+# Adding a seventh section means adding a block here. Nothing else changes.
+
+- key: hochzeitsplanung
+  label: "Hochzeitsplanung"
+  order: 1
+  intro: >-
+    Ablauf, Timing, Budget und die Entscheidungen, die euch den Tag leichter
+    machen. Ohne Checklisten-Panik.
+  main_link:
+    href: "/faq.html"
+    label: "Häufige Fragen zu Ablauf und Buchung"
+    text: >-
+      Vieles, was hier ausführlich steht, beantworten wir auf der Hauptseite auch kurz.
+  seo_title: "Hochzeitsplanung – Tipps & Ablauf | Mellowlight Journal"
+  seo_description: >-
+    Praktische Antworten zur Hochzeitsplanung: Zeitplan, Ablauf, Budget und
+    worauf es an eurem Hochzeitstag wirklich ankommt.
+
+- key: hochzeitsfotografie
+  label: "Hochzeitsfotografie"
+  order: 2
+  intro: >-
+    Was eine Reportage kostet, wie viel Zeit Bilder brauchen und was ein
+    First Look eigentlich bringt.
+  main_link:
+    href: "/gallery.html"
+    label: "Unsere Hochzeitsreportagen ansehen"
+    text: >-
+      Wie das in der Praxis aussieht, seht ihr am besten an ganzen Reportagen.
+  seo_title: "Hochzeitsfotografie verstehen | Mellowlight Journal"
+  seo_description: >-
+    Wie viel Zeit braucht eine Hochzeitsreportage, was kostet Hochzeitsfotografie
+    und was passiert bei einem Paarshooting? Antworten aus der Praxis.
+
+- key: echte-hochzeiten
+  label: "Echte Hochzeiten"
+  order: 3
+  intro: >-
+    Ganze Hochzeitstage in Bildern. Keine Inszenierung, keine Stilvorgaben –
+    die Paare, wie sie sind.
+  main_link:
+    href: "/gallery.html"
+    label: "Alle Stories auf mellowlight.de"
+    text: >-
+      Weitere vollständige Hochzeiten findet ihr in unserem Portfolio.
+  seo_title: "Echte Hochzeiten – Reportagen aus Unterfranken | Mellowlight"
+  seo_description: >-
+    Echte Hochzeiten aus Schweinfurt, Würzburg und ganz Unterfranken, erzählt
+    als vollständige Fotoreportagen.
+
+- key: locations
+  label: "Locations"
+  order: 4
+  intro: >-
+    Standesämter, Scheunen, Wälder und Hinterhöfe – wie sie sich fotografieren
+    lassen und was ihr vorher wissen solltet.
+  main_link:
+    href: "/anfrage.html"
+    label: "Eure Location mit uns besprechen"
+    text: >-
+      Ihr habt eine Location im Blick und wisst nicht, ob sie fotografisch trägt? Fragt uns.
+  seo_title: "Hochzeitslocations in Unterfranken | Mellowlight Journal"
+  seo_description: >-
+    Hochzeitslocations in Schweinfurt, Würzburg und Unterfranken: Licht,
+    Platzangebot, Ablauf und ehrliche Einschätzungen aus der Fotografenperspektive.
+
+- key: alternative-hochzeiten
+  label: "Alternative Hochzeiten"
+  order: 5
+  intro: >-
+    Für alle, denen das übliche Programm zu eng ist. Rituale, Formate und
+    Hochzeiten, die sich nicht an die Vorlage halten.
+  main_link:
+    href: "/about.html"
+    label: "Wer wir sind"
+    text: >-
+      Wir fotografieren seit Jahren Hochzeiten, die sich nicht an die Vorlage halten.
+  seo_title: "Alternative Hochzeiten & ausgefallene Ideen | Mellowlight"
+  seo_description: >-
+    Alternative Hochzeiten jenseits von Boho und Konvention: Handfasting,
+    Elopements, Standesamt-Feiern und Ideen für einen Tag, der zu euch passt.
+
+- key: fuer-fotografinnen
+  label: "Für Fotograf:innen"
+  order: 6
+  intro: >-
+    Fachliches aus unserer Arbeit: Licht, Ablauf, Ausrüstung und die Fehler,
+    aus denen wir gelernt haben.
+  main_link:
+    href: "/about.html"
+    label: "Mehr über uns"
+    text: >-
+      Wer hier schreibt und woher die Erfahrung kommt.
+  seo_title: "Für Fotograf:innen – Wissen aus der Praxis | Mellowlight Journal"
+  seo_description: >-
+    Wissen für Hochzeitsfotograf:innen: Reportage-Workflow, Licht am
+    Hochzeitstag, Ausrüstung und Erfahrungen aus echten Aufträgen.

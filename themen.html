@@ -1,0 +1,50 @@
+---
+layout: base
+title: "Alle Themen"
+permalink: /themen/
+seo_title: "Alle Themen im Mellowlight Journal"
+seo_description: >-
+  Alle Themen des Mellowlight Journals auf einen Blick — von Standesamt und
+  First Look bis zu Locations in Schweinfurt und Würzburg.
+---
+
+<div class="container container--narrow section">
+  <nav class="breadcrumb" aria-label="Brotkrumennavigation">
+    <a href="{{ '/' | relative_url }}">Journal</a>
+  </nav>
+  <h1>Alle Themen</h1>
+  <p class="lead">Die sechs Bereiche des Journals, und darunter jedes Thema, über das wir bisher geschrieben haben.</p>
+</div>
+
+<div class="container section">
+  <h2 class="eyebrow">Bereiche</h2>
+  <ul class="taglist taglist--large">
+    {%- assign sections = site.data.categories | sort: 'order' -%}
+    {%- for cat in sections -%}
+    {%- assign count = site.categories[cat.key] | size -%}
+    <li>
+      <a class="tag" href="{{ '/kategorie/' | append: cat.key | append: '/' | relative_url }}">
+        {{ cat.label }} <span class="tag__count">{{ count | default: 0 }}</span>
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+<div class="container section">
+  <h2 class="eyebrow">Themen</h2>
+  {%- comment -%}
+    Sorted by how much has actually been written about each, so the topics
+    Mellowlight has real depth on come first rather than alphabetical noise.
+  {%- endcomment -%}
+  {%- assign tags = site.tags | sort -%}
+  <ul class="taglist taglist--large">
+    {%- for tag in tags -%}
+    <li>
+      <a class="tag" href="{{ '/thema/' | append: tag[0] | slugify | append: '/' | relative_url }}">
+        {{ tag[0] }} <span class="tag__count">{{ tag[1] | size }}</span>
+      </a>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

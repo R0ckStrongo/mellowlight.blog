@@ -1,25 +1,40 @@
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a class="ml-1 mr-1" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-  {% else %}
-    <span>&laquo; Prev</span>
-  {% endif %}
+{%- comment -%}
+  Real anchors with real hrefs, so every page of the archive is crawlable and
+  works without JavaScript (§21).
+{%- endcomment -%}
 
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <span class="ml-1 mr-1">{{ page }}</span>
-    {% elsif page == 1 %}
-      <a class="ml-1 mr-1" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-    {% else %}
-      <a class="ml-1 mr-1" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-    {% endif %}
-  {% endfor %}
+{%- if paginator.total_pages > 1 -%}
+<nav class="pagination" aria-label="Seitennavigation">
+  {%- if paginator.previous_page %}
+  <a class="pagination__step" rel="prev"
+     href="{{ paginator.previous_page_path | relative_url }}">Zurück</a>
+  {%- else %}
+  <span class="pagination__step pagination__step--off">Zurück</span>
+  {%- endif %}
 
-  {% if paginator.next_page %}
-    <a class="ml-1 mr-1" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-  {% else %}
-    <span>Next &raquo;</span>
-  {% endif %}
-</div>
-{% endif %}
+  <ol class="pagination__pages">
+    {%- for n in (1..paginator.total_pages) %}
+    <li>
+      {%- if n == paginator.page %}
+      <span class="pagination__page" aria-current="page">
+        <span class="visually-hidden">Seite </span>{{ n }}
+      </span>
+      {%- elsif n == 1 %}
+      <a class="pagination__page" href="{{ '/artikel/' | relative_url }}">
+        <span class="visually-hidden">Seite </span>1</a>
+      {%- else %}
+      <a class="pagination__page" href="{{ site.paginate_path | replace: ':num', n | relative_url }}">
+        <span class="visually-hidden">Seite </span>{{ n }}</a>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ol>
+
+  {%- if paginator.next_page %}
+  <a class="pagination__step" rel="next"
+     href="{{ paginator.next_page_path | relative_url }}">Weiter</a>
+  {%- else %}
+  <span class="pagination__step pagination__step--off">Weiter</span>
+  {%- endif %}
+</nav>
+{%- endif -%}

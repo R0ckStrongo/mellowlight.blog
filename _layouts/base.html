@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    {%- include head.html -%}
+  </head>
+  <body class="page page--{{ page.layout | default: 'default' }}">
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    {%- include header.html -%}
+
+    <main id="inhalt">
+      {{ content }}
+    </main>
+
+    {%- include footer.html -%}
+
+    {%- comment -%}
+      Three small modules, all deferred, none required for the page to work.
+      Reading an article with JavaScript disabled loses the lightbox and the
+      search box and nothing else (§38).
+    {%- endcomment -%}
+    <script src="{{ '/assets/js/nav.js' | relative_url }}" defer></script>
+    {%- if page.gallery_blocks or page.layout == 'article' %}
+    <script src="{{ '/assets/js/lightbox.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/share.js' | relative_url }}" defer></script>
+    {%- endif %}
+    {%- if page.search %}
+    <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+    {%- endif %}
+  </body>
+</html>

@@ -1,0 +1,49 @@
+---
+layout: base
+---
+{%- comment -%}
+  Rendered by jekyll-archives for each category. Title, intro and SEO copy all
+  come from _data/categories.yml, so a section page is never thin or generic
+  (§20). `page.title` here is the raw category key.
+{%- endcomment -%}
+{%- assign cat = site.data.categories | where: 'key', page.title | first -%}
+
+<div class="container container--narrow section">
+  <nav class="breadcrumb" aria-label="Brotkrumennavigation">
+    <a href="{{ '/' | relative_url }}">Journal</a>
+  </nav>
+  <h1>{{ cat.label | default: page.title }}</h1>
+  {%- if cat.intro %}<p class="lead">{{ cat.intro }}</p>{% endif %}
+  <p class="meta">{{ page.posts.size }} {% if page.posts.size == 1 %}Artikel{% else %}Artikel{% endif %}</p>
+</div>
+
+<div class="container section">
+  <div class="card-grid">
+    {%- for post in page.posts -%}
+    {%- include article-card.html post=post -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+<div class="container container--narrow">
+  {%- comment -%}
+    A contextual bridge to the matching page on mellowlight.de. Defined per
+    section in _data/categories.yml, so it is genuinely relevant rather than
+    the same button repeated six times.
+  {%- endcomment -%}
+  {%- if cat.main_link %}
+  {%- comment -%}
+    Jekyll's include tag takes plain values only — a filter in a parameter is a
+    syntax error, so the URL is assembled first.
+  {%- endcomment -%}
+  {%- assign main_link_href = site.main_site | append: cat.main_link.href -%}
+  {%- include cta.html
+        variant='closing'
+        eyebrow=cat.label
+        heading=cat.main_link.text
+        label=cat.main_link.label
+        href=main_link_href -%}
+  {%- else %}
+  {%- include cta.html variant='closing' -%}
+  {%- endif %}
+</div>

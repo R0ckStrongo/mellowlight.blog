@@ -1,0 +1,31 @@
+{%- comment -%}
+  The reusable content offer. Today it points at Mellowlight's services; the
+  same component will hold the Wedding Guide or a checklist later without any
+  redesign (§25, §26, §27).
+
+  Parameters (all optional, sensible defaults below):
+    eyebrow, heading, body, label, href, variant ('inline' | 'closing')
+
+  An inline CTA belongs after the passage it answers, not bolted to the end of
+  every article. A closing CTA appears once, at the foot.
+{%- endcomment -%}
+
+{%- assign variant = include.variant | default: 'closing' -%}
+
+{%- comment -%}
+  The fallback target has to be built before the default is applied. Written as
+  one chain — `include.href | default: site.main_site | append: '/anfrage.html'`
+  — the append also runs when include.href was set, turning a custom link into
+  something like /gallery.html/anfrage.html.
+{%- endcomment -%}
+{%- assign default_href = site.main_site | append: '/anfrage.html' -%}
+{%- assign cta_href = include.href | default: default_href -%}
+
+<aside class="cta cta--{{ variant }}">
+  {%- if include.eyebrow %}<p class="cta__eyebrow">{{ include.eyebrow }}</p>{% endif %}
+  <p class="cta__heading">{{ include.heading | default: 'Plant ihr eine Hochzeit, bei der der ganze Tag erzählt werden soll?' }}</p>
+  {%- if include.body %}<p class="cta__body">{{ include.body }}</p>{% endif %}
+  <a class="button button--special" href="{{ cta_href }}">
+    {{ include.label | default: 'Erzählt uns eure Geschichte' }}
+  </a>
+</aside>

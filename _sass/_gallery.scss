@@ -1,0 +1,195 @@
+// ---------------------------------------------------------------------------
+// Photostory gallery
+// ---------------------------------------------------------------------------
+// Two rules govern everything below.
+//
+// A row is always flush. Its column widths are proportional to the aspect
+// ratios of the photographs in it, worked out at build time and handed over as
+// `--cols`. A landscape therefore gets a wide column and a portrait a narrow
+// one, and both come out exactly the same height. With equal columns they
+// differed by around 90px, and that gap read as a photograph that had failed
+// to load.
+//
+// A photograph is never cropped to fit a layout. Because the columns already
+// make the heights match, `object-fit: cover` only ever absorbs a rounding
+// error of a pixel or two. The one exception is `cinematic`, which crops on
+// purpose and only when the author asks for it.
+//
+// `content-visibility` used to sit on the later blocks. It has been removed:
+// its reserved placeholder height was a guess, and on scroll it produced
+// exactly the phantom gaps this file now exists to prevent. Lazy loading
+// already does the real work.
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ml-space-lg);
+  margin-block: var(--ml-space-2xl);
+}
+
+.gallery__block {
+  display: grid;
+  grid-template-columns: var(--cols, 1fr);
+  gap: var(--ml-gap);
+  align-items: stretch;      // every frame in the row shares one height
+}
+
+// The figure passes the row height down to the image, through the button that
+// makes it clickable.
+.gallery__figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-width: 0;              // lets a grid column actually shrink
+}
+
+.gallery__trigger {
+  display: block;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  // The image is the control's label; its alt text is the accessible name.
+}
+
+.gallery__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--ml-focal, center);
+}
+
+// A single photograph stands alone, so it keeps its exact natural height and
+// object-fit never touches it.
+.gallery__block--solo-full .gallery__img,
+.gallery__block--solo-bleed .gallery__img {
+  height: auto;
+  object-fit: fill;
+}
+
+// A highlight has to be takeable in one look. Left uncapped, a portrait in a
+// full-bleed frame came out at 267% of the screen height on a 1920px display —
+// impressive in a screenshot, unreadable in use.
+//
+// The cap is on height, not width, and the width follows the aspect ratio. So
+// nothing is ever cropped: a wide photograph still bleeds edge to edge, and a
+// tall one simply stops growing and centres itself. A panorama is unaffected
+// because it never reaches the limit in the first place.
+//
+// Phones are left alone — there a portrait already sits at 69% of the screen,
+// which is exactly right.
+@media (min-width: 48rem) {
+  .gallery__block--solo-full .gallery__img,
+  .gallery__block--solo-bleed .gallery__img {
+    max-height: 80vh;
+    width: auto;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+}
+
+// Captions are opt-in. If the author did not write one, nothing renders.
+.gallery__caption {
+  margin-block-start: var(--ml-space-2xs);
+  font-family: var(--ml-body);
+  font-size: var(--ml-size-xs);
+  line-height: 1.5;
+  color: var(--ml-muted);
+  max-width: 46ch;
+}
+
+// --- the blocks -------------------------------------------------------------
+// Column widths arrive from the build, so only the blocks whose structure is
+// not a plain row need anything declared here.
+
+// The breather. Breaks the container and runs to the edges of the viewport.
+.gallery__block--solo-bleed {
+  width: 100vw;
+  max-width: 100vw;
+  margin-inline-start: 50%;
+  transform: translateX(-50%);
+  margin-block: var(--ml-space-xl);
+}
+
+// Two frames on a shifted baseline — the most "magazine" of the blocks. Now
+// that both are the same height, the offset reads as composition rather than
+// as something broken.
+.gallery__block--duo-offset {
+  align-items: start;
+}
+
+.gallery__block--duo-offset .gallery__figure:last-child {
+  margin-block-start: clamp(1rem, 4vw, 3rem);
+}
+
+// One large frame with two smaller ones stacked beside it.
+.gallery__block--trio-stack .gallery__figure:first-child {
+  grid-row: 1 / span 2;
+}
+
+// The only block that crops on purpose.
+.gallery__block--cinematic {
+  grid-template-columns: 1fr;
+}
+
+.gallery__block--cinematic .gallery__img {
+  aspect-ratio: 21 / 9;
+}
+
+// --- narrow screens ---------------------------------------------------------
+
+@media (max-width: 40rem) {
+  .gallery {
+    gap: var(--ml-space-md);
+  }
+
+  // Three across is too small to read on a phone. One over two keeps the
+  // block's identity without shrinking any frame to a thumbnail. `--cols-sm`
+  // carries the ratios of the two that stay side by side.
+  .gallery__block--trio-row,
+  .gallery__block--trio-stack {
+    grid-template-columns: var(--cols-sm, 1fr 1fr);
+  }
+
+  .gallery__block--trio-row .gallery__figure:first-child,
+  .gallery__block--trio-stack .gallery__figure:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  // Full width and alone on its row, so it keeps its natural height.
+  .gallery__block--trio-row .gallery__figure:first-child .gallery__img,
+  .gallery__block--trio-stack .gallery__figure:first-child .gallery__img {
+    height: auto;
+    object-fit: fill;
+  }
+
+  .gallery__block--solo-bleed {
+    margin-block: var(--ml-space-lg);
+  }
+
+  .gallery__block--duo-offset .gallery__figure:last-child {
+    margin-block-start: var(--ml-space-md);
+  }
+}
+
+// --- interaction ------------------------------------------------------------
+
+.gallery__trigger:focus-visible {
+  outline: 2px solid var(--ml-accent);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .gallery__trigger .gallery__img {
+    transition: opacity var(--ml-duration) var(--ml-ease);
+  }
+
+  .gallery__trigger:hover .gallery__img {
+    opacity: 0.92;
+  }
+}

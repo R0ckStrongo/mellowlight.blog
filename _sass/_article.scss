@@ -1,0 +1,388 @@
+// ---------------------------------------------------------------------------
+// Article
+// ---------------------------------------------------------------------------
+
+.article {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--ml-gutter), 1fr)
+    [wide-start] minmax(0, 8rem)
+    [content-start] min(var(--ml-max-narrow), 100% - var(--ml-gutter) * 2) [content-end]
+    minmax(0, 8rem) [wide-end]
+    minmax(var(--ml-gutter), 1fr) [full-end];
+}
+
+.article > * {
+  grid-column: content;
+}
+
+// --- header -----------------------------------------------------------------
+
+.article__header {
+  margin-block-start: var(--ml-space-xl);
+}
+
+.breadcrumb {
+  margin-block-end: var(--ml-space-md);
+  font-family: var(--ml-util);
+  font-weight: 300;
+  font-size: var(--ml-size-xs);
+  letter-spacing: var(--ml-track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ml-muted);
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--ml-accent);
+  text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+.breadcrumb span {
+  margin-inline: 0.5em;
+  color: var(--ml-rule);
+}
+
+.article__title {
+  margin-block-end: var(--ml-space-md);
+}
+
+.article__lead {
+  margin-block-end: var(--ml-space-md);
+  color: var(--ml-ink);
+}
+
+.article__meta {
+  padding-block-end: var(--ml-space-md);
+  border-bottom: 1px solid var(--ml-rule);
+}
+
+// --- hero -------------------------------------------------------------------
+
+.article__hero {
+  grid-column: wide;
+  margin-block: var(--ml-space-lg);
+}
+
+.article__hero-caption {
+  margin-block-start: var(--ml-space-2xs);
+  font-size: var(--ml-size-xs);
+  color: var(--ml-muted);
+}
+
+// A photostory opens with the photograph, not the headline. The title sits
+// under it rather than over it, because a caption band across a photograph
+// costs the image more than it gains the type.
+.article__hero--bleed {
+  grid-column: full;
+  width: 100vw;
+  margin-inline-start: 50%;
+  transform: translateX(-50%);
+  margin-block: 0 var(--ml-space-xl);
+}
+
+// The story hero keeps the same rule as a gallery highlight: capped by height,
+// width follows the ratio, nothing cropped.
+.article__hero--bleed .article__hero-img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+}
+
+@media (min-width: 48rem) {
+  .article__hero--bleed .article__hero-img {
+    width: auto;
+    max-width: 100%;
+    margin-inline: auto;
+    object-fit: fill;
+  }
+}
+
+.article--story .article__header {
+  margin-block-start: 0;
+}
+
+.article--story .article__intro {
+  grid-column: content;
+}
+
+// --- body -------------------------------------------------------------------
+
+.article__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ml-space-lg);
+  margin-block-start: var(--ml-space-lg);
+}
+
+// The contents list moves into the right-hand margin on wide screens — the
+// asymmetry the editorial grid was built for. Below that it sits above the
+// prose as a collapsible summary.
+@media (min-width: 68rem) {
+  .article__body {
+    grid-column: content-start / wide-end;
+    grid-template-columns: minmax(0, var(--ml-max-narrow)) minmax(0, 14rem);
+    gap: var(--ml-space-xl);
+    align-items: start;
+  }
+
+  .article__aside {
+    position: sticky;
+    inset-block-start: calc(70px + var(--ml-space-md));   // clears the masthead
+    order: 2;
+  }
+
+  .article__prose { order: 1; }
+}
+
+// --- table of contents ------------------------------------------------------
+
+.toc__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-inline-start: 1px solid var(--ml-rule);
+}
+
+.toc__item--h3 { padding-inline-start: var(--ml-space-sm); }
+
+.toc__link {
+  display: block;
+  padding: var(--ml-space-3xs) var(--ml-space-sm);
+  margin-inline-start: -1px;
+  border-inline-start: 1px solid transparent;
+  font-size: var(--ml-size-sm);
+  line-height: 1.4;
+  color: var(--ml-muted);
+  text-decoration: none;
+  transition: color var(--ml-duration) var(--ml-ease),
+              border-color var(--ml-duration) var(--ml-ease);
+}
+
+.toc__link:hover,
+.toc__link[aria-current="true"] {
+  color: var(--ml-ink);
+  border-inline-start-color: var(--ml-accent);
+}
+
+@media (max-width: 67.99rem) {
+  .toc {
+    padding: var(--ml-space-md);
+    background: var(--ml-paper-alt);
+    border-radius: var(--ml-radius);
+  }
+}
+
+// Headings need clearance so an anchor jump does not land them under the
+// sticky masthead.
+.prose :is(h2, h3) {
+  scroll-margin-block-start: calc(70px + var(--ml-space-md));
+}
+
+// --- location facts ---------------------------------------------------------
+
+.facts {
+  padding: var(--ml-space-md);
+  margin-block-end: var(--ml-space-lg);
+  background: var(--ml-paper-alt);
+  border-radius: var(--ml-radius);
+}
+
+.facts__list { margin: 0; }
+
+.facts__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding-block: var(--ml-space-2xs);
+  border-bottom: 1px solid var(--ml-rule);
+}
+
+.facts__row:last-child { border-bottom: 0; }
+
+@media (min-width: 32rem) {
+  .facts__row {
+    grid-template-columns: 12rem 1fr;
+    gap: var(--ml-space-sm);
+  }
+}
+
+.facts dt {
+  font-family: var(--ml-util);
+  font-size: var(--ml-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ml-muted);
+}
+
+.facts dd {
+  margin: 0;
+  font-size: var(--ml-size-base);
+}
+
+// --- footer -----------------------------------------------------------------
+
+.article__footer {
+  margin-block-start: var(--ml-space-2xl);
+  padding-block-start: var(--ml-space-lg);
+  border-top: 1px solid var(--ml-rule);
+}
+
+.taglist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ml-space-2xs);
+  margin: 0 0 var(--ml-space-lg);
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--ml-rule);
+  border-radius: var(--ml-radius);
+  font-family: var(--ml-util);
+  font-size: var(--ml-size-xs);
+  letter-spacing: 0.06em;
+  color: var(--ml-muted);
+  text-decoration: none;
+  transition: border-color var(--ml-duration) var(--ml-ease),
+              color var(--ml-duration) var(--ml-ease);
+}
+
+.tag:hover {
+  border-color: var(--ml-accent);
+  color: var(--ml-accent);
+}
+
+// --- share ------------------------------------------------------------------
+
+.share {
+  margin-block-end: var(--ml-space-lg);
+}
+
+.share__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ml-space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.share__item {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--ml-util);
+  font-size: var(--ml-size-sm);
+  letter-spacing: 0.06em;
+  color: var(--ml-muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--ml-duration) var(--ml-ease);
+}
+
+.share__item:hover {
+  color: var(--ml-accent);
+  text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+// --- author -----------------------------------------------------------------
+
+.article__author {
+  padding-block-start: var(--ml-space-lg);
+  border-top: 1px solid var(--ml-rule);
+}
+
+.article__author-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ml-space-md);
+  margin-block-start: var(--ml-space-2xs);
+  flex-wrap: wrap;
+}
+
+.article__author-portraits {
+  display: flex;
+  gap: var(--ml-space-2xs);
+  flex-shrink: 0;
+}
+
+// A square portrait rather than a circle: nothing else on the site is round,
+// and a photograph of a person deserves the same treatment as every other
+// photograph here.
+.article__author-img {
+  width: 88px;
+  height: 110px;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--ml-paper-alt);
+}
+
+.article__author-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ml-space-sm);
+  margin-block-start: var(--ml-space-2xs);
+}
+
+.article__author-link {
+  font-family: var(--ml-util);
+  font-size: var(--ml-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ml-muted);
+  text-decoration: none;
+}
+
+.article__author-link:hover {
+  color: var(--ml-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.article__author-name {
+  margin: var(--ml-space-3xs) 0 var(--ml-space-2xs);
+  font-family: var(--ml-display);
+  font-style: normal;
+  font-size: var(--ml-size-h4);
+}
+
+.article__author-bio {
+  max-width: 52ch;
+  margin: 0;
+  font-size: var(--ml-size-sm);
+  color: var(--ml-muted);
+}
+
+// --- signature --------------------------------------------------------------
+
+.article__footer .signature {
+  margin-block-end: var(--ml-space-lg);
+  color: var(--ml-accent);
+}
+
+// --- taxonomy listing -------------------------------------------------------
+
+.taglist--large .tag {
+  padding: 0.45rem 0.9rem;
+  font-size: var(--ml-size-sm);
+}
+
+.tag__count {
+  margin-inline-start: 0.35em;
+  color: var(--ml-rule);
+  font-variant-numeric: tabular-nums;
+}
+
+.tag:hover .tag__count { color: var(--ml-accent); }

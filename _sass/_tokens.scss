@@ -1,0 +1,104 @@
+// ---------------------------------------------------------------------------
+// Design tokens
+// ---------------------------------------------------------------------------
+// Every value here was read out of mellowlight.de's own stylesheet, so the
+// Journal and the main site cannot drift apart. If a colour or a typeface
+// changes over there, it changes here — and nowhere else in this repository.
+
+:root {
+  // --- colour ---------------------------------------------------------------
+  // Exactly the four values mellowlight.de uses. Nothing else is invented.
+  --ml-paper:      #ffffff;   // Reinweiß
+  --ml-ink:        #111111;   // Tiefschwarz: body text, dark surfaces
+  --ml-muted:      #6f6f6f;   // Soft Grey: meta text, bylines, captions
+  --ml-accent:     #3a2230;   // Tiefes Aubergine. Used sparingly and on purpose.
+
+  --ml-rule:       #e5e5e5;   // hairlines
+  --ml-paper-alt:  #f9f9f9;   // alternating section ground
+
+  --ml-ink-08:     rgba(17, 17, 17, 0.08);
+  --ml-ink-60:     rgba(17, 17, 17, 0.60);
+
+  // --- type -----------------------------------------------------------------
+  // One typeface carries the brand: futura-pt, the same face as the wordmark.
+  // Headlines and the logo are therefore literally the same thing, which is
+  // what makes the masthead read as a masthead. Playfair Display is no longer
+  // used anywhere; its @font-face stays declared in _fonts.scss but the browser
+  // never fetches a face nothing references.
+  //--ml-display: "futura-pt", "Zen Kaku Gothic New", sans-serif;
+  --ml-display: "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ml-body:    "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ml-util:    "futura-pt", "Zen Kaku Gothic New", sans-serif;
+  --ml-script:  "Tirelessly Love You", cursive;
+  --ml-journal: "Playfair Display", serif;
+
+  // A magazine scale: tighter steps in the body range, dramatic at the top.
+  --ml-size-xs:   0.75rem;
+  --ml-size-sm:   0.875rem;
+  --ml-size-base: 1rem;
+  --ml-size-lead: clamp(1.0625rem, 0.98rem + 0.42vw, 1.25rem);
+  --ml-size-h4:   clamp(1.125rem, 1.05rem + 0.36vw, 1.3125rem);
+  --ml-size-h3:   clamp(1.375rem, 1.2rem + 0.78vw, 1.75rem);
+  --ml-size-h2:   clamp(1.75rem, 1.42rem + 1.45vw, 2.625rem);
+  --ml-size-h1:   clamp(2.125rem, 1.5rem + 2.8vw, 4rem);
+  --ml-size-hero: clamp(2.5rem, 1.4rem + 4.9vw, 5.5rem);
+
+  // Futura runs wide and needs pulling in at display sizes; at small sizes it
+  // needs the tracking left alone or it turns mushy.
+  --ml-track-display: 0;
+  --ml-track-head:    0;
+
+  --ml-leading-tight: 1.05;
+  --ml-leading-head:  1.14;
+  --ml-leading-body:  1.65;   // matches the main site exactly
+
+  // The eyebrow tracking that carries the brand's voice: futura-pt, wide.
+  --ml-track-eyebrow: 0.24em;
+  --ml-track-brand:   0.28em;
+
+  // --- space ----------------------------------------------------------------
+  --ml-space-3xs: 0.25rem;
+  --ml-space-2xs: 0.5rem;
+  --ml-space-xs:  0.75rem;
+  --ml-space-sm:  1rem;
+  --ml-space-md:  1.5rem;
+  --ml-space-lg:  2.5rem;
+  --ml-space-xl:  4rem;
+  --ml-space-2xl: clamp(4rem, 2.5rem + 6vw, 8rem);
+  --ml-space-3xl: clamp(6rem, 3rem + 10vw, 12rem);
+
+  // --- layout ---------------------------------------------------------------
+  // The editorial grid is deliberately off-centre: text sits left of centre and
+  // photographs are free to bleed past it. That asymmetry is the Journal's own
+  // character, and it is the one place it departs from the main site's
+  // symmetrical, centred sections.
+  --ml-measure:     min(68ch, 100%);   // reading width
+  --ml-gutter:      clamp(1.25rem, 0.6rem + 3vw, 3.5rem);
+  --ml-max:         84rem;             // outer container
+  --ml-max-narrow:  46rem;             // article body
+  --ml-gap:         clamp(0.5rem, 0.25rem + 1.2vw, 1.25rem);   // between photographs
+
+  // --- surface --------------------------------------------------------------
+  // 6px, taken from the main site's buttons. Nothing else is rounded.
+  --ml-radius: 6px;
+
+  --ml-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ml-duration: 0.3s;   // the main site's transition timing
+}
+
+// Honour the system setting. Everything below is progressive enhancement, so
+// removing it costs no functionality.
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ml-duration: 0.01ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

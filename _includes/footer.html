@@ -1,0 +1,43 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <p class="footer__wordmark">MELLOW<span>LIGHT</span></p>
+      <p class="footer__line">Hochzeitsreportagen in Foto &amp; Film — Schweinfurt, Würzburg und überall dort, wo ihr feiert.</p>
+      <a class="button button--special" href="{{ site.main_site }}/anfrage.html">Erzählt uns eure Geschichte</a>
+    </div>
+
+    <nav class="footer__nav" aria-label="Journal">
+      <h2 class="footer__heading">Journal</h2>
+      <ul>
+        {%- assign sections = site.data.categories | sort: 'order' -%}
+        {%- for cat in sections %}
+        <li><a href="{{ '/kategorie/' | append: cat.key | append: '/' | relative_url }}">{{ cat.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    <nav class="footer__nav" aria-label="Mellowlight">
+      <h2 class="footer__heading">Mellowlight</h2>
+      <ul>
+        <li><a href="{{ site.main_site }}/">Startseite</a></li>
+        <li><a href="{{ site.main_site }}/about.html">Über uns</a></li>
+        <li><a href="{{ site.main_site }}/gallery.html">Stories</a></li>
+        <li><a href="{{ site.main_site }}/faq.html">Gut zu wissen</a></li>
+        <li><a href="{{ site.main_site }}/anfrage.html">Anfragen</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__nav" aria-label="Rechtliches">
+      <h2 class="footer__heading">Rechtliches</h2>
+      <ul>
+        <li><a href="{{ site.main_site }}/impressum.html">Impressum</a></li>
+        <li><a href="{{ site.main_site }}/datenschutz.html">Datenschutz</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS-Feed</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <p class="footer__legal">
+    © {{ 'now' | date: '%Y' }} Mellowlight — Marie-Claire &amp; Martin
+  </p>
+</footer>

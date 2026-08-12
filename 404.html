@@ -1,10 +1,32 @@
 ---
-layout: default
-title: 404
+layout: base
+title: "Seite nicht gefunden"
 permalink: /404.html
+sitemap: false
+noindex: true
+seo_title: "Seite nicht gefunden | Mellowlight Journal"
+seo_description: "Diese Seite gibt es nicht mehr. Hier geht es zurück ins Mellowlight Journal."
 ---
 
-<div class="text-center">
-<h1 class="display-1 mt-5 mb-4"><span class="badge badge-danger" id="badge-404">404</span> Diese Seite existiert nicht!</h1>
-<p>Bitte nutze die Suchleiste oder gehe zurück zur <a href="{{site.baseurl}}/">Startseite</a>.</p>
+<div class="container container--narrow section notfound">
+  <p class="eyebrow eyebrow--bare">Fehler 404</p>
+  <h1>Diese Seite haben wir nicht im Kasten.</h1>
+  <p class="lead">
+    Der Link ist alt, hat einen Tippfehler, oder wir haben etwas umbenannt.
+    Beides lässt sich reparieren.
+  </p>
+
+  <ul class="notfound__list">
+    <li><a href="{{ '/' | relative_url }}">Zur Startseite des Journals</a></li>
+    <li><a href="{{ '/artikel/' | relative_url }}">Alle Artikel ansehen</a></li>
+    <li><a href="{{ '/suche/' | relative_url }}">Im Journal suchen</a></li>
+    <li><a href="{{ site.main_site }}/">Zur Mellowlight-Website</a></li>
+  </ul>
+
+  <h2 class="eyebrow">Vielleicht sucht ihr das</h2>
+  <div class="card-grid">
+    {%- for post in site.posts limit: 3 -%}
+    {%- include article-card.html post=post -%}
+    {%- endfor -%}
+  </div>
 </div>

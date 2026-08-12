@@ -1,60 +1,155 @@
 ---
-layout: default
-title: Home
+layout: base
+seo_title: "Mellowlight Journal – Hochzeiten, Fotografie und alles dazwischen"
+seo_description: >-
+  Ehrliche Antworten zur Hochzeitsplanung, echte Hochzeiten aus Unterfranken
+  und ein Blick hinter unsere Fotografie. Das Journal von Mellowlight.
 ---
 
-{% if page.url == "/" %}
+{%- comment -%}
+  The front page of a publication, not a blog index.
 
-<!-- Featured
-================================================== -->
-<section class="wrapper" id="featured">
-    <header>
-        <h2>Featured</h2>
-        <p>Angesagte Artikel</p>
-    </header>
-    <div class="row">
+  There is no uniform card grid here on purpose (§11). Each section composes
+  itself from what it has: a lead article that gets a photograph and room, and
+  up to two follow-ups that get a line of type and a small frame. Sections
+  alternate which side the lead photograph sits on, so scrolling the page
+  produces a rhythm rather than a column of identical boxes.
+{%- endcomment -%}
 
-    {% for post in site.posts %}
+{%- assign featured_posts = site.posts | where: 'featured', true -%}
+{%- assign featured = featured_posts.first | default: site.posts.first -%}
 
-        {% if post.featured == true %}
+<div class="spread home">
 
-            {% include featuredbox.html %}
+  {%- comment -%} ---------- masthead ---------- {%- endcomment -%}
+  <header class="journal-head -wide">
+    <h1 class="journal-head__title">
+      <span class="journal-head__mellow">Mellow<em>light</em></span>
+      <span class="journal-head__journal">Journal</span>
+    </h1>
+    <p class="journal-head__intro">
+      Wir sind Marie-Claire und Martin und fotografieren Hochzeiten in
+      Unterfranken. Hier schreiben wir auf, was wir dabei lernen: wie viel Zeit
+      ein Tag wirklich braucht, wie Standesämter von innen aussehen und warum
+      die besten Bilder selten die geplanten sind.
+    </p>
+  </header>
 
-        {% endif %}
+  {%- comment -%} ---------- the feature ---------- {%- endcomment -%}
+  {%- if featured -%}
+  {%- assign f_cat = site.data.categories | where: 'key', featured.categories.first | first -%}
+  <article class="feature -full">
+    <a class="feature__link" href="{{ featured.url | relative_url }}">
+      {%- if featured.hero_image %}
+      <div class="feature__media">
+        {%- include image.html
+              src=featured.hero_image
+              srcset=featured.hero_image_srcset
+              alt=featured.hero_image_alt
+              width=featured.hero_image_width
+              height=featured.hero_image_height
+              sizes='100vw'
+              eager=true
+              class='feature__img' -%}
+      </div>
+      {%- endif %}
+      <div class="feature__text">
+        <p class="feature__eyebrow">
+          Ausgewählte Story{% if f_cat %} <span aria-hidden="true">·</span> {{ f_cat.label }}{% endif %}
+        </p>
+        <h2 class="feature__title">{{ featured.title }}</h2>
+        {%- assign f_lead = featured.excerpt | default: featured.description -%}
+        {%- if f_lead %}
+        <p class="feature__lead">{{ f_lead | strip_html | strip | truncate: 180 }}</p>
+        {%- endif %}
+        <p class="meta">Weiterlesen</p>
+      </div>
+    </a>
+  </article>
+  {%- endif -%}
 
-    {% endfor %}
+  {%- comment -%} ---------- sections ---------- {%- endcomment -%}
+  {%- assign sections = site.data.categories | sort: 'order' -%}
+  {%- for cat in sections -%}
+    {%- assign in_cat = site.posts | where_exp: 'p', 'p.categories contains cat.key' -%}
+    {%- comment -%}
+      The featured article already had its moment at the top; showing it again
+      immediately below would waste the section's lead slot.
+    {%- endcomment -%}
+    {%- assign pool = in_cat | where_exp: 'p', 'p.url != featured.url' -%}
+    {%- if pool.size > 0 -%}
+    {%- assign lead = pool.first -%}
+    {%- assign rest = pool | slice: 1, 2 -%}
 
+  <section class="strand {% cycle 'strand--left', 'strand--right' %} -wide"
+           aria-labelledby="section-{{ cat.key }}">
+    <h2 class="eyebrow" id="section-{{ cat.key }}">
+      <a href="{{ '/kategorie/' | append: cat.key | append: '/' | relative_url }}">{{ cat.label }}</a>
+    </h2>
+    <p class="strand__intro">{{ cat.intro }}</p>
+
+    <div class="strand__body">
+      <article class="strand__lead">
+        <a class="card__link" href="{{ lead.url | relative_url }}">
+          {%- if lead.hero_image %}
+          <div class="card__media">
+            {%- include image.html
+                  src=lead.hero_image
+                  srcset=lead.hero_image_srcset
+                  alt=lead.hero_image_alt
+                  width=lead.hero_image_width
+                  height=lead.hero_image_height
+                  sizes='(min-width: 60rem) 34rem, 92vw'
+                  class='card__img' -%}
+          </div>
+          {%- endif %}
+          <h3 class="strand__lead-title">{{ lead.title }}</h3>
+          {%- assign l_lead = lead.excerpt | default: lead.description -%}
+          {%- if l_lead %}
+          <p class="card__excerpt">{{ l_lead | strip_html | strip | truncate: 150 }}</p>
+          {%- endif %}
+        </a>
+      </article>
+
+      {%- if rest.size > 0 %}
+      <ul class="strand__list">
+        {%- for post in rest %}
+        <li class="strand__item">
+          <a class="strand__item-link" href="{{ post.url | relative_url }}">
+            {%- if post.hero_image %}
+            <div class="strand__thumb">
+              {%- include image.html
+                    src=post.hero_image
+                    srcset=post.hero_image_srcset
+                    alt=post.hero_image_alt
+                    sizes='120px'
+                    class='card__img' -%}
+            </div>
+            {%- endif %}
+            <div>
+              <h3 class="strand__item-title">{{ post.title }}</h3>
+              <p class="meta">{{ post.date | date: '%-d. %B %Y' }}</p>
+            </div>
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
     </div>
-</section>
+  </section>
+    {%- endif -%}
+  {%- endfor -%}
 
-{% endif %}
+  {%- comment -%} ---------- foot ---------- {%- endcomment -%}
+  <div class="home__more -wide">
+    <a class="button button--ghost" href="{{ '/artikel/' | relative_url }}">Alle Artikel ansehen</a>
+  </div>
 
-<!-- Posts Index
-================================================== -->
-<section class="wrapper">
-    <header>
-        <h2>Alle Stories</h2>
-        <p>Mehr lesen</p>
-    </header>
-
-    <div class="row listrecent">
-
-        {% for post in paginator.posts %}
-
-        {% include postbox.html %}
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-<!-- Pagination
-================================================== -->
-<div class="bottompagination">
-<div class="pointerup"><i class="fa fa-caret-up"></i></div>
-<span class="navigation" role="navigation">
-    {% include pagination.html %}
-</span>
+  <div class="-wide">
+    {%- include cta.html
+          variant='closing'
+          eyebrow='Mellowlight'
+          heading='Wenn ihr eure Hochzeit so erzählt haben möchtet, wie sie wirklich war.'
+          body='Schreibt uns, was ihr vorhabt. Wir melden uns mit ehrlichen Gedanken dazu zurück.' -%}
+  </div>
 </div>
-

@@ -1,6 +1,9 @@
-_site
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/
 .DS_Store
-*.swp
-.sass-cache
-*~
 *.bat
+CONTENT-TODO.md

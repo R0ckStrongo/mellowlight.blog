@@ -1,0 +1,60 @@
+{%- comment -%}
+  Renders the blocks the gallery plugin produced. There is no layout logic
+  here on purpose — the engine already decided the rhythm, this only draws it.
+
+  Each figure carries the data the lightbox needs, so the lightbox itself
+  requires no configuration and no separate index of the images.
+{%- endcomment -%}
+
+{%- if page.gallery_blocks -%}
+<div class="gallery" data-lightbox-gallery>
+  {%- for block in page.gallery_blocks -%}
+    {%- comment -%}
+      A bleed block sizes its images against the viewport, everything else
+      against the content column. Getting `sizes` wrong here is the single
+      easiest way to make a browser download an image four times larger than
+      it needs.
+    {%- endcomment -%}
+    {%- case block.type -%}
+      {%- when 'solo-bleed' -%}{%- assign block_sizes = '100vw' -%}
+      {%- when 'solo-full' -%}{%- assign block_sizes = '(min-width: 64rem) 46rem, 100vw' -%}
+      {%- when 'trio-row' -%}{%- assign block_sizes = '(min-width: 64rem) 15rem, (min-width: 40rem) 30vw, 50vw' -%}
+      {%- when 'trio-stack' -%}{%- assign block_sizes = '(min-width: 64rem) 28rem, 50vw' -%}
+      {%- else -%}{%- assign block_sizes = '(min-width: 64rem) 23rem, 50vw' -%}
+    {%- endcase -%}
+
+  {%- comment -%}
+    The column widths come from the photographs themselves, worked out at build
+    time. Passing them as custom properties keeps the stylesheet free of any
+    per-image rules.
+  {%- endcomment -%}
+  <div class="gallery__block gallery__block--{{ block.type }}"
+       style="--cols: {{ block.columns }};{% if block.columns_sm %} --cols-sm: {{ block.columns_sm }};{% endif %}">
+    {%- for image in block.images -%}
+    <figure class="gallery__figure">
+      <button
+        class="gallery__trigger"
+        type="button"
+        data-lightbox
+        data-full="{{ image.full | relative_url }}"
+        {% if image.srcset %}data-srcset="{{ image.srcset }}" {% endif %}data-alt="{{ image.alt | escape }}"
+        {%- if image.width %} data-width="{{ image.width }}" data-height="{{ image.height }}"{% endif %}>
+        {%- include image.html
+              src=image.src
+              srcset=image.srcset
+              alt=image.alt
+              width=image.width
+              height=image.height
+              sizes=block_sizes
+              class='gallery__img' -%}
+      </button>
+      {%- comment -%} Captions render only when the author wrote one (§16). {%- endcomment -%}
+      {%- if image.caption %}
+      <figcaption class="gallery__caption">{{ image.caption }}</figcaption>
+      {%- endif %}
+    </figure>
+    {%- endfor -%}
+  </div>
+  {%- endfor -%}
+</div>
+{%- endif -%}
