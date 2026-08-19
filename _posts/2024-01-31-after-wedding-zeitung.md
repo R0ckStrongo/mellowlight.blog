@@ -10,7 +10,7 @@ categories: [hochzeitsplanung]
 tags: ["Hochzeitszeitung", "After Wedding", "Hochzeitsfeier"]
 excerpt: "Die klassische Hochzeitszeitung landet meist ungelesen im Regal. Es geht auch anders herum."
 description: "Warum die klassische Hochzeitszeitung selten gelesen wird und was eine After-Wedding-Zeitung besser macht."
-hero_image: /assets/images/posts/hochzeitszeitung-auf-tisch.webp
+hero_image: /assets/images/posts/brautpaar-liest-hochzeitszeitung.webp
 hero_image_alt: "Aufgeschlagene Hochzeitszeitung auf einem gedeckten Tisch"
 featured: true
 ---

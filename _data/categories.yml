@@ -42,7 +42,7 @@
   label: "Echte Hochzeiten"
   order: 3
   intro: >-
-    Ganze Hochzeitstage in Bildern. Keine Inszenierung, keine Stilvorgaben –
+    Auszüge aus ganzen Hochzeitstagen in Bildern. Keine Inszenierung, keine Stilvorgaben –
     die Paare, wie sie sind.
   main_link:
     href: "/gallery.html"
@@ -51,14 +51,14 @@
       Weitere vollständige Hochzeiten findet ihr in unserem Portfolio.
   seo_title: "Echte Hochzeiten – Reportagen aus Unterfranken | Mellowlight"
   seo_description: >-
-    Echte Hochzeiten aus Schweinfurt, Würzburg und ganz Unterfranken, erzählt
+    Echte Hochzeiten aus Schweinfurt, Würzburg und ganz Franken, erzählt
     als vollständige Fotoreportagen.
 
 - key: locations
   label: "Locations"
   order: 4
   intro: >-
-    Standesämter, Scheunen, Wälder und Hinterhöfe – wie sie sich fotografieren
+    Standesämter, Schlösser, Parks und sonstige Locations – wie sie sich fotografieren
     lassen und was ihr vorher wissen solltet.
   main_link:
     href: "/anfrage.html"
@@ -75,12 +75,12 @@
   order: 5
   intro: >-
     Für alle, denen das übliche Programm zu eng ist. Rituale, Formate und
-    Hochzeiten, die sich nicht an die Vorlage halten.
+    Hochzeiten, die sich nicht an eine Vorlage halten.
   main_link:
     href: "/about.html"
     label: "Wer wir sind"
     text: >-
-      Wir fotografieren seit Jahren Hochzeiten, die sich nicht an die Vorlage halten.
+      Wir fotografieren seit Jahren gerne Hochzeiten, die sich nicht an eine Vorlage halten.
   seo_title: "Alternative Hochzeiten & ausgefallene Ideen | Mellowlight"
   seo_description: >-
     Alternative Hochzeiten jenseits von Boho und Konvention: Handfasting,
