@@ -125,7 +125,13 @@ layout: base
     </div>
   </div>
 
-  {%- comment -%} ---------- photostory ---------- {%- endcomment -%}
+  {%- comment -%}
+    ---------- photostory ----------
+    Photo blocks now live inside the article body: authors place {% photos %}{% endphotos %}
+    between paragraphs, so the pictures appear where the story puts them.
+    The block below only still runs for older articles that use the previous
+    `gallery:` front matter and have not been migrated yet.
+  {%- endcomment -%}
   {%- if page.gallery_blocks %}
   {%- include gallery.html -%}
   {%- endif %}

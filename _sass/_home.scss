@@ -74,6 +74,13 @@
   transform: translateX(-50%);
 }
 
+@media (min-width: 768px) {
+  .feature {
+    width: 90vw;
+    max-width: 1400px;
+  }
+}
+
 .feature__link {
   display: block;
   color: inherit;

@@ -20,7 +20,7 @@ Eine Hochzeit ist zweifellos einer der denkwürdigsten Tage im Leben eines Paare
 
 **Was ist eine Destination Wedding?**
 
-Eine [Destination Wedding](/services.html#destination/), zu Deutsch auch "Hochzeit im Ausland" genannt, ist eine besondere Art der Hochzeit, bei der das Brautpaar beschließt, an einem weit entfernten Ort zu heiraten. Dieser Ort kann ein traumhaftes Strandresort, ein verschneites Bergchalet oder eine historische Stadt sein. Im Wesentlichen ist eine Destination Wedding eine Hochzeit und eine Reise zugleich.
+Eine Destination Wedding, zu Deutsch auch "Hochzeit im Ausland" genannt, ist eine besondere Art der Hochzeit, bei der das Brautpaar beschließt, an einem weit entfernten Ort zu heiraten. Dieser Ort kann ein traumhaftes Strandresort, ein verschneites Bergchalet oder eine historische Stadt sein. Im Wesentlichen ist eine Destination Wedding eine Hochzeit und eine Reise zugleich.
 
 **Warum eine Destination Wedding?**
 
@@ -48,4 +48,4 @@ Die Planung einer Destination Wedding erfordert sorgfältige Überlegungen:
 
 Eine Destination Wedding kann zu einem unvergesslichen Erlebnis werden und eure Liebe in einer atemberaubenden Umgebung feiern. Es ist eine Gelegenheit, eure gemeinsame Reise mit Abenteuer und Romantik zu beginnen. Wagt den Schritt und plant eure Hochzeit an einem Ort, der eure Herzen höher schlagen lässt. Schaut gerne auch mal bei unserer [Bucket List] vorbei, wo wir einige Ziele vorschlagen.
 
-Wenn du an einer [Destination Wedding](/services.html#destination/) oder anderen Hochzeitsformen interessiert bist, dann stöbere doch noch etwas in unserem Blog, oder wirf einen Blick auch unsere [Angebots-Seite](/services.html/).
+Wenn du an einer Destination Wedding oder anderen Hochzeitsformen interessiert bist, dann stöbere doch noch etwas in unserem Blog, oder wirf einen Blick auch unsere [Website](https://mellowlight.de).

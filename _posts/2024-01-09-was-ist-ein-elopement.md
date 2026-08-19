@@ -16,7 +16,7 @@ hero_image_alt: "Brautpaar läuft lachend über einen Strand"
 
 **Elopement: Die Intime Hochzeit, die immer beliebter wird**
 
-In der Welt der Hochzeiten gibt es viele verschiedene Trends und Traditionen, die im Laufe der Zeit entstanden sind. Eines dieser Trends, das in den letzten Jahren immer mehr an Popularität gewonnen hat, ist das "[Elopement](/services.html#elopement/)". Aber was genau ist ein Elopement, und warum entscheiden sich immer mehr Paare dafür? In diesem Artikel werden wir diesen Trend genauer unter die Lupe nehmen.
+In der Welt der Hochzeiten gibt es viele verschiedene Trends und Traditionen, die im Laufe der Zeit entstanden sind. Eines dieser Trends, das in den letzten Jahren immer mehr an Popularität gewonnen hat, ist das "Elopement". Aber was genau ist ein Elopement, und warum entscheiden sich immer mehr Paare dafür? In diesem Artikel werden wir diesen Trend genauer unter die Lupe nehmen.
 
 **Was ist ein Elopement?**
 
@@ -40,4 +40,4 @@ Heutzutage hat sich die Bedeutung von Elopement jedoch gewandelt. Es geht nicht 
 
 Insgesamt sind Elopements eine wunderbare Möglichkeit für Paare, ihre Liebe auf ihre eigene Art und Weise zu feiern und gleichzeitig den Stress und die Kosten einer traditionellen Hochzeit zu reduzieren. Die steigende Beliebtheit dieses Trends zeigt, dass die Bedeutung einer Hochzeit nicht von der Größe der Feier abhängt, sondern von der Liebe und dem Engagement, die in diesem besonderen Moment geteilt werden.
 
-Wenn du an [Elopements](/services.html#elopement/) oder anderen Hochzeitsformen interessiert bist, dann stöbere doch noch etwas in unserem Blog, oder wirf einen Blick auch unsere [Angebots-Seite](/services.html/).
+Wenn du an Elopements oder anderen Hochzeitsformen interessiert bist, dann stöbere doch noch etwas in unserem Blog, oder wirf einen Blick auch unsere [Website](https://mellowlight.de).

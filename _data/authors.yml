@@ -22,7 +22,7 @@ martin:
   avatar: "/assets/images/authors/martin.webp"
   instagram: "https://www.instagram.com/mellowlight.wedding"
 
-mc-martin:
+mellowlight:
   name: "Marie-Claire & Martin"
   role: "Mellowlight"
   bio: >-
@@ -30,4 +30,3 @@ mc-martin:
     und überall dort, wo ihr feiert – ruhig in der Arbeit, klar in der Ästhetik.
   avatar: "/assets/images/authors/mellowlight.webp"
   instagram: "https://www.instagram.com/mellowlight.wedding"
-  members: [mc, martin]

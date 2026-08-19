@@ -12,7 +12,6 @@ excerpt: "Seit der Legalisierung tauchen neue Rituale auf. Was davon auf einer d
 description: "Unity Joint statt Sanduhr-Ritual: was die Cannabis-Legalisierung für Hochzeiten in Deutschland bedeutet und was rechtlich gilt."
 hero_image: /assets/images/posts/cannabis-wedding.webp
 hero_image_alt: "Detailaufnahme einer alternativen Hochzeitsdekoration mit Cannabisblättern"
-featured: true
 ---
 
 Am Freitag beschloss der Bundestag die Liberalisierung der Cannabis-Gesetzeslage, wodurch Erwachsenen der Konsum und Besitz der Droge künftig teilweise erlaubt sein soll.\*

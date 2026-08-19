@@ -10,7 +10,7 @@ categories: [fuer-fotografinnen, hochzeitsfotografie]
 tags: ["Hochzeitsreportage", "Hochzeitsfeier", "Essen"]
 excerpt: "Eine Frage, über die sich Fotograf:innen streiten. Unsere Antwort hängt davon ab, wer das Menü gemacht hat."
 description: "Sollten Hochzeitsfotograf:innen das Essen fotografieren? Argumente für beide Seiten – und wie wir es handhaben."
-hero_image: /assets/images/posts/prost-beim-hochzeitsessen.webp
+hero_image: /assets/images/posts/braut-beim-hochzeitsessen.webp
 hero_image_alt: "Gäste stoßen beim Hochzeitsessen mit Gläsern an"
 ---
 

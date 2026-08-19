@@ -41,7 +41,7 @@ seo_description: >-
   <ul class="taglist taglist--large">
     {%- for tag in tags -%}
     <li>
-      <a class="tag" href="{{ '/thema/' | append: tag[0] | slugify | append: '/' | relative_url }}">
+      <a class="tag" href="{{ '' | append: tag[0] | slugify | prepend: '/thema/' | append: '/' | relative_url }}">
         {{ tag[0] }} <span class="tag__count">{{ tag[1] | size }}</span>
       </a>
     </li>

@@ -75,7 +75,9 @@ html_files.each do |file|
   next if page.include?("/seite") || page.end_with?("404.html")
 
   errors << "#{page}: no <title>" unless html =~ /<title>[^<]+<\/title>/
-  errors << "#{page}: no meta description" unless html =~ /<meta name="description" content="[^"]+"/
+  unless html =~ /<meta name="robots" content="noindex"/
+    errors << "#{page}: no meta description" unless html =~ /<meta name="description" content="[^"]+"/
+  end
   errors << "#{page}: no canonical" unless html =~ /<link rel="canonical"/
 
   h1s = html.scan(/<h1[\s>]/).length

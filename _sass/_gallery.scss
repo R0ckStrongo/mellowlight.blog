@@ -39,7 +39,7 @@
 .gallery__figure {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 0 !important;
   min-width: 0;              // lets a grid column actually shrink
 }
 
@@ -175,6 +175,22 @@
   .gallery__block--duo-offset .gallery__figure:last-child {
     margin-block-start: var(--ml-space-md);
   }
+}
+
+// --- inline photo blocks ----------------------------------------------------
+// A {% photos %} block sits between two paragraphs inside the article's text
+// column, so it needs less air around it than a standalone gallery: the text
+// above and below already separates it. It also stays inside the column rather
+// than bleeding to the viewport edges — on wide screens the reading column
+// deliberately sits left of centre, and a 100vw frame would land about 140px
+// off. The plugin therefore never emits a bleed block here.
+
+.prose .gallery--inline {
+  margin-block: var(--ml-space-xl);
+}
+
+.prose .gallery--inline:first-child {
+  margin-block-start: 0;
 }
 
 // --- interaction ------------------------------------------------------------
