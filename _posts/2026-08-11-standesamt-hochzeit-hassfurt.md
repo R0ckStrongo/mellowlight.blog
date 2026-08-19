@@ -5,8 +5,8 @@ date: 2026-08-11
 author: mellowlight
 type: story
 categories: [echte-hochzeiten, locations]
-tags: ["Standesamt", "Haßfurt", "Unterfranken", "First Look", "Hochzeitsreportage", "Paarshooting"]
-location: "Haßfurt, Unterfranken"
+tags: ["Standesamt", "Hassfurt", "Unterfranken", "First Look", "Hochzeitsreportage", "Paarshooting"]
+location: "Hassfurt, Unterfranken"
 excerpt: "Standesamtlich heiraten, mit dreißig Gästen und ohne Zeitplan an der Wand. Ein ganzer Tag in Haßfurt."
 description: "Echte Hochzeit im Standesamt Haßfurt: First Look, Trauung, Paarshooting in der Altstadt und Feier im Gasthaus Goger in Augsfeld."
 hero_image: /assets/images/posts/standesamt-hassfurt/brautpaar-shooting-in-hassfurt.webp
