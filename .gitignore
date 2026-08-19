@@ -7,3 +7,4 @@ vendor/
 .DS_Store
 *.bat
 CONTENT-TODO.md
+assets/images/posts/**/webp-*/

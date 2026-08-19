@@ -12,8 +12,15 @@
 
 module Mellowlight
   module ImageMeta
-    # The export sizes, matching the convention already used on mellowlight.de.
-    DERIVATIVES = [800, 1200, 2000].freeze
+    # The sizes script/make_image_sizes.sh produces. Chosen from the widths the
+    # photographs are actually displayed at in an article, not from round
+    # numbers: a trio row shows each picture at ~232px, a pair at ~358px, and a
+    # full-width picture at 736px — doubled for retina screens, that is roughly
+    # 460 / 720 / 1470.
+    #
+    # A size larger than the original is never generated and never listed, so
+    # adding 1400 here costs nothing while your files stay 1000px wide.
+    DERIVATIVES = [400, 700, 1000, 1400].freeze
 
     # Anything wider than this ratio counts as landscape, narrower as portrait.
     PORTRAIT_MAX = 0.9

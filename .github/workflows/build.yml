@@ -27,6 +27,16 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
+      # Erzeugt die kleineren Bildfassungen, aus denen Jekyll das srcset baut.
+      # Läuft vor dem Build, damit die Ordner beim Bauen schon da sind. Die
+      # erzeugten Dateien landen nur im Deployment, nicht im Repository — das
+      # bleibt dadurch klein.
+      - name: Bildgrößen erzeugen
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends libvips-tools
+          bash script/make_image_sizes.sh
+
       - name: Build
         run: bundle exec jekyll build
         env:
