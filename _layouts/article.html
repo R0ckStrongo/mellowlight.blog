@@ -147,7 +147,7 @@ layout: base
       <h2 class="visually-hidden">Themen</h2>
       <ul class="taglist">
         {%- for tag in page.tags %}
-        <li><a class="tag" href="{{ '' | append: tag | slugify | prepend: '/thema/' | relative_url }}">{{ tag }}</a></li>
+        <li><a class="tag" href="{{ '' | append: tag | slugify | prepend: '/thema/' | append: '/' | relative_url }}">{{ tag }}</a></li>
         {%- endfor %}
       </ul>
     </div>
