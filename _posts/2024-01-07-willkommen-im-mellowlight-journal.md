@@ -10,8 +10,8 @@ categories: [hochzeitsfotografie]
 tags: ["Mellowlight", "Hochzeitsreportage"]
 excerpt: "Kein Tagebuch, sondern ein Nachschlagewerk: was wir hier aufschreiben und warum."
 description: "Warum wir ein Journal schreiben, für wen es gedacht ist und was ihr hier künftig findet."
-hero_image: /assets/images/posts/brautpaar-vor-bergen.webp
-hero_image_alt: "Brautpaar vor einer Bergkulisse bei Sonnenuntergang"
+hero_image: /assets/images/posts/Marie-Claire_Martin_Collage-1500.webp
+hero_image_alt: "Marie-Claire und Martin sind Mellowlight"
 ---
 
 ## Herzlich Willkommen bei unserem neuen Hochzeitsfotografie-Blog von Mellowlight!
