@@ -14,7 +14,7 @@ hero_image_alt: "Brautpaar vor dem Eingang des Standesamts Haßfurt"
 # Die Zwischenüberschriften gliedern die Bildblöcke; ein Inhaltsverzeichnis
 # braucht eine Fotostory deshalb trotzdem nicht.
 toc: false
-featured: true
+featured: false
 photo_folder: standesamt-hassfurt
 ---
 
