@@ -58,3 +58,11 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        
+        - name: Cloudflare Cache purge
+        run: | 
+            curl --fail-with-body --request POST \ 
+                --url "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \ 
+                --header "Authorization: Bearer ${{ secrets.CLOUDFLARE_API_TOKEN }}" \ 
+                --header "Content-Type: application/json" \ 
+                --data '{"hosts":["blog.mellowlight.de", "www.blog.mellowlight.de"]}'
