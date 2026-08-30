@@ -49,7 +49,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
 
-    deploy:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -60,7 +60,7 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Cloudflare Cache purge
+      - name: Cloudflare Cache purgen
         run: |
           curl --fail-with-body --request POST \
             --url "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
