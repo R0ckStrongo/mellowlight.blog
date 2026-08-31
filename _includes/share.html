@@ -23,10 +23,10 @@
       <a class="share__item" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | uri_escape }}"
          target="_blank" rel="noopener">Facebook</a>
     </li>
-    {%- if page.hero_image %}
+    {%- if page.image %}
     <li>
       <a class="share__item"
-         href="https://pinterest.com/pin/create/button/?url={{ share_url | uri_escape }}&media={{ page.hero_image | absolute_url | uri_escape }}&description={{ share_title }}"
+         href="https://pinterest.com/pin/create/button/?url={{ share_url | uri_escape }}&media={{ page.image | absolute_url | uri_escape }}&description={{ share_title }}"
          target="_blank" rel="noopener">Pinterest</a>
     </li>
     {%- endif %}

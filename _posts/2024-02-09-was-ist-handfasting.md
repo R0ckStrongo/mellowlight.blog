@@ -10,8 +10,8 @@ categories: [alternative-hochzeiten]
 tags: ["Handfasting", "Alternative Hochzeit", "Tradition", "Freie Trauung"]
 excerpt: "Ein Ritual, das älter ist als der Ringtausch – und sich erstaunlich leicht in eine freie Trauung einbauen lässt."
 description: "Handfasting: keltischer Ursprung, Ablauf der Zeremonie, Bedeutung der Bandfarben und wie es sich in eine freie Trauung einfügt."
-hero_image: /assets/images/posts/Handfasting-Hochzeit-Brautpaar.webp
-hero_image_alt: "Hände eines Brautpaars werden beim Handfasting mit farbigen Bändern gebunden"
+image: /assets/images/posts/Handfasting-Hochzeit-Brautpaar.webp
+image_alt: "Hände eines Brautpaars werden beim Handfasting mit farbigen Bändern gebunden"
 ---
 
 Die Hochzeitswelt ist voller Traditionen und Rituale, die Paare dabei unterstützen, ihre Liebe und Verbundenheit zu feiern. Eines dieser Rituale, das in den letzten Jahren an Popularität gewonnen hat, ist das Handfasting. Insbesondere bei alternativen Hochzeiten findet es sich als Hauptbestandteil der Trauung immer häufiger wieder.

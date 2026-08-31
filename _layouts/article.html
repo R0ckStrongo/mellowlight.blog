@@ -33,14 +33,14 @@ layout: base
 
   {%- comment -%} ---------- header ---------- {%- endcomment -%}
   <header class="article__header {% if type == 'story' %}article__header--story{% endif %}">
-    {%- if type == 'story' and page.hero_image %}
+    {%- if type == 'story' and page.image %}
     <div class="article__hero article__hero--bleed">
       {%- include image.html
-            src=page.hero_image
-            srcset=page.hero_image_srcset
-            alt=page.hero_image_alt
-            width=page.hero_image_width
-            height=page.hero_image_height
+            src=page.image
+            srcset=page.image_srcset
+            alt=page.image_alt
+            width=page.image_width
+            height=page.image_height
             sizes='100vw'
             eager=true
             class='article__hero-img' -%}
@@ -80,19 +80,19 @@ layout: base
       </p>
     </div>
 
-    {%- if type != 'story' and page.hero_image %}
+    {%- if type != 'story' and page.image %}
     <div class="article__hero">
       {%- include image.html
-            src=page.hero_image
-            srcset=page.hero_image_srcset
-            alt=page.hero_image_alt
-            width=page.hero_image_width
-            height=page.hero_image_height
+            src=page.image
+            srcset=page.image_srcset
+            alt=page.image_alt
+            width=page.image_width
+            height=page.image_height
             sizes='(min-width: 64rem) 62rem, 100vw'
             eager=true
             class='article__hero-img' -%}
-      {%- if page.hero_image_caption %}
-      <p class="article__hero-caption">{{ page.hero_image_caption }}</p>
+      {%- if page.image_caption %}
+      <p class="article__hero-caption">{{ page.image_caption }}</p>
       {%- endif %}
     </div>
     {%- endif %}

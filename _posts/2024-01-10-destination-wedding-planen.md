@@ -10,8 +10,8 @@ categories: [hochzeitsplanung, alternative-hochzeiten]
 tags: ["Destination Wedding", "Reise", "Elopement"]
 excerpt: "Heiraten, wo ihr sonst Urlaub macht. Was das an Planung wirklich bedeutet."
 description: "Destination Wedding planen: Rechtliches, Gästeliste, Budget und Timing für eine Hochzeit im Ausland."
-hero_image: /assets/images/posts/brautpaar-vor-bergen.webp
-hero_image_alt: "Brautpaar steht vor einer weiten Berglandschaft"
+image: /assets/images/posts/brautpaar-vor-bergen.webp
+image_alt: "Brautpaar steht vor einer weiten Berglandschaft"
 ---
 
 **Destination Wedding: Eine Alternative für Abenteuerlustige**

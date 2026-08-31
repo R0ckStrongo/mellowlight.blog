@@ -45,8 +45,8 @@ categories: [hochzeitsfotografie]
 tags: ["Hochzeitsreportage", "Zeitplan"]
 excerpt: "Acht Stunden klingen nach viel. Wir rechnen einen echten Tag durch."
 description: "Wie viele Stunden Hochzeitsfotografie ihr braucht — mit einem realistischen Zeitplan vom Getting Ready bis zum Tortenanschnitt."
-hero_image: /assets/images/posts/brautpaar-vor-bergen.webp
-hero_image_alt: "Brautpaar vor einer Bergkulisse"
+image: /assets/images/posts/brautpaar-vor-bergen.webp
+image_alt: "Brautpaar vor einer Bergkulisse"
 ---
 
 Der erste Absatz steht direkt hier.
@@ -70,8 +70,8 @@ Das Front Matter ist der Block zwischen den beiden `---` ganz oben.
 | `date` | Datum im Format `2026-08-11`. |
 | `description` | Der Text, den Google im Suchergebnis anzeigt. 120–160 Zeichen. |
 | `categories` | Mindestens eine der sechs Kategorien (siehe unten). |
-| `hero_image` | Das große Bild oben. Pfad ab `/assets/…`. |
-| `hero_image_alt` | Bildbeschreibung für blinde Leser:innen und Google. |
+| `image` | Das große Bild oben. Pfad ab `/assets/…`. |
+| `image_alt` | Bildbeschreibung für blinde Leser:innen und Google. |
 
 ### Empfohlen
 

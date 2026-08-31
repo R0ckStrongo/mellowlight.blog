@@ -9,8 +9,8 @@ tags: ["Standesamt", "Hassfurt", "Unterfranken", "First Look", "Hochzeitsreporta
 location: "Hassfurt, Unterfranken"
 excerpt: "Standesamtlich heiraten, mit dreißig Gästen und ohne Zeitplan an der Wand. Ein ganzer Tag in Haßfurt."
 description: "Echte Hochzeit im Standesamt Haßfurt: First Look, Trauung, Paarshooting in der Altstadt und Feier im Gasthaus Goger in Augsfeld."
-hero_image: /assets/images/posts/standesamt-hassfurt/brautpaar-shooting-in-hassfurt.webp
-hero_image_alt: "Brautpaar vor dem Eingang des Standesamts Haßfurt"
+image: /assets/images/posts/standesamt-hassfurt/brautpaar-shooting-in-hassfurt.webp
+image_alt: "Brautpaar vor dem Eingang des Standesamts Haßfurt"
 # Die Zwischenüberschriften gliedern die Bildblöcke; ein Inhaltsverzeichnis
 # braucht eine Fotostory deshalb trotzdem nicht.
 toc: false

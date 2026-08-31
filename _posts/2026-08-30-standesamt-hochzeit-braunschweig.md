@@ -9,8 +9,8 @@ tags: ["Standesamt", "Braunschweig", "Hochzeitsfeier", "Hochzeitsreportage", "Pa
 location: "Braunschweig"
 excerpt: "Nach dem Standesamt setzte der Regen ein. Doch dadurch hatten wir beim Brautpaarshooting die Innenstadt und den Klostergarten für uns alleine."
 description: "Standesamtliche Hochzeit im Rathaus Braunschweig, Paarfotos im Klostergarten und Feier im Gasthaus Oelper. Eine verregnete Aprilhochzeit mit viel Charakter."
-hero_image: /assets/images/posts/ReginaAndreBraunschweig/35-brautpaar-auf-weg-zum-brautpaarshooting-braunschweig.webp
-hero_image_alt: "Brautpaar vor dem Eingang des Standesamts Haßfurt"
+image: /assets/images/posts/ReginaAndreBraunschweig/35-brautpaar-auf-weg-zum-brautpaarshooting-braunschweig.webp
+image_alt: "Brautpaar vor dem Eingang des Standesamts Haßfurt"
 # Die Zwischenüberschriften gliedern die Bildblöcke; ein Inhaltsverzeichnis
 # braucht eine Fotostory deshalb trotzdem nicht.
 toc: false

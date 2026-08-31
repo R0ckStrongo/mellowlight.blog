@@ -10,8 +10,8 @@ categories: [hochzeitsplanung]
 tags: ["DIY", "Einladungskarte", "Gestaltung"]
 excerpt: "Farben, Schriften, Papier und Formulierungen – die Entscheidungen, die eine Einladung tragen."
 description: "Farbpalette, Schrift, Papier, Format und Formulierung: praktische Tipps für die Gestaltung eurer DIY-Hochzeitseinladungen."
-hero_image: /assets/images/posts/diy-wedding-invitation-flatlay.webp
-hero_image_alt: "Flatlay mit DIY-Hochzeitseinladung, Umschlag und Trockenblumen"
+image: /assets/images/posts/diy-wedding-invitation-flatlay.webp
+image_alt: "Flatlay mit DIY-Hochzeitseinladung, Umschlag und Trockenblumen"
 ---
 
 ## Tipps und Ideen für die Gestaltung von DIY Hochzeitseinladungen

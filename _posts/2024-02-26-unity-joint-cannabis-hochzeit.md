@@ -10,8 +10,8 @@ categories: [alternative-hochzeiten]
 tags: ["Alternative Hochzeit", "Cannabis", "Unity Joint", "Hochzeitsfeier"]
 excerpt: "Seit der Legalisierung tauchen neue Rituale auf. Was davon auf einer deutschen Hochzeit tatsächlich erlaubt ist."
 description: "Unity Joint statt Sanduhr-Ritual: was die Cannabis-Legalisierung für Hochzeiten in Deutschland bedeutet und was rechtlich gilt."
-hero_image: /assets/images/posts/cannabis-wedding.webp
-hero_image_alt: "Detailaufnahme einer alternativen Hochzeitsdekoration mit Cannabisblättern"
+image: /assets/images/posts/cannabis-wedding.webp
+image_alt: "Detailaufnahme einer alternativen Hochzeitsdekoration mit Cannabisblättern"
 ---
 
 Am Freitag beschloss der Bundestag die Liberalisierung der Cannabis-Gesetzeslage, wodurch Erwachsenen der Konsum und Besitz der Droge künftig teilweise erlaubt sein soll.\*

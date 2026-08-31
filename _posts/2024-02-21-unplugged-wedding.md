@@ -10,8 +10,8 @@ categories: [hochzeitsplanung, hochzeitsfotografie]
 tags: ["Unplugged Wedding", "Alternative Hochzeit", "Hochzeitsfeier"]
 excerpt: "Zwanzig Gäste mit erhobenen Handys sind auf keinem Bild schön. Wie ihr das freundlich löst."
 description: "Unplugged Wedding: warum Smartphones bei der Trauung stören, wie ihr es den Gästen sagt und was es für die Fotos bedeutet."
-hero_image: /assets/images/posts/unplugged-wedding-sign.webp
-hero_image_alt: "Handgeschriebenes Schild, das Gäste um eine handyfreie Trauung bittet"
+image: /assets/images/posts/unplugged-wedding-sign.webp
+image_alt: "Handgeschriebenes Schild, das Gäste um eine handyfreie Trauung bittet"
 ---
 
 Wenn du dich fragst, was hinter dem Begriff "Unplugged Wedding" steckt und warum er in der Hochzeitswelt auch im deutschsprachigen Raum immer häufiger auftaucht, klären wir dich gerne in folgendem Artikel darüber auf.

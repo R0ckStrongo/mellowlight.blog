@@ -10,8 +10,8 @@ categories: [hochzeitsplanung]
 tags: ["DIY", "Einladungskarte", "Nachhaltigkeit"]
 excerpt: "Selbst gestaltet, weniger Müll, mehr Charakter. Was dabei zu bedenken ist."
 description: "Nachhaltige Hochzeitseinladungen selbst gestalten: Papierwahl, Druck, Versand und was das Budget wirklich schont."
-hero_image: /assets/images/posts/DIY-Hochzeitseinladung.webp
-hero_image_alt: "Selbstgemachte Hochzeitseinladung mit getrockneten Blüten"
+image: /assets/images/posts/DIY-Hochzeitseinladung.webp
+image_alt: "Selbstgemachte Hochzeitseinladung mit getrockneten Blüten"
 ---
 
 Das Datum steht fest, die Location ist gebucht? Jetzt steht das Einladen von Gästen auf der Tagesordnung. Doch wie fängt man an und vor allem, welche Infos brauchen eure Gäste?

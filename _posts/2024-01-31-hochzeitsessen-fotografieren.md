@@ -10,8 +10,8 @@ categories: [fuer-fotografinnen, hochzeitsfotografie]
 tags: ["Hochzeitsreportage", "Hochzeitsfeier", "Essen"]
 excerpt: "Eine Frage, über die sich Fotograf:innen streiten. Unsere Antwort hängt davon ab, wer das Menü gemacht hat."
 description: "Sollten Hochzeitsfotograf:innen das Essen fotografieren? Argumente für beide Seiten – und wie wir es handhaben."
-hero_image: /assets/images/posts/braut-beim-hochzeitsessen.webp
-hero_image_alt: "Gäste stoßen beim Hochzeitsessen mit Gläsern an"
+image: /assets/images/posts/braut-beim-hochzeitsessen.webp
+image_alt: "Gäste stoßen beim Hochzeitsessen mit Gläsern an"
 ---
 
 In der Hochzeitsfotografie ist nicht nur das Festhalten der wichtigen Momente, sondern auch das Einfangen der Stimmung und der Details von großer Bedeutung. Eine Frage, die sich viele Hochzeitsfotografen stellen: Sollte man das Hochzeitsessen fotografieren oder nicht? In diesem Artikel werfen wir einen Blick auf die Vor- und Nachteile sowie die richtige Herangehensweise, um Fotografen und Brautpaare bei ihrer Planung zu unterstützen.

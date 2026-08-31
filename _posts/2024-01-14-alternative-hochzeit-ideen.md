@@ -10,8 +10,8 @@ categories: [alternative-hochzeiten]
 tags: ["Alternative Hochzeit", "Inspiration", "Hochzeitsfeier"]
 excerpt: "Zehn Ideen für Paare, denen das übliche Programm zu eng ist."
 description: "Zehn Ideen für eine Hochzeit, die sich nicht an die Vorlage hält – von der Location bis zur Zeremonie."
-hero_image: /assets/images/posts/hochzeit-location-park.webp
-hero_image_alt: "Hochzeitsgesellschaft in einem Park"
+image: /assets/images/posts/hochzeit-location-park.webp
+image_alt: "Hochzeitsgesellschaft in einem Park"
 ---
 
 Für Paare, die sich in vielen Dingen von der Masse abheben, ist es nur natürlich, dass auch ihre Hochzeit anders sein sollte. Wenn ihr zu den alternativen Paaren gehört, die das Übliche meiden und nach Wegen suchen, euren besonderen Tag auf einzigartige Weise zu gestalten, dann seid ihr hier genau richtig. Dieser Artikel ist für euch!

@@ -7,8 +7,8 @@ type: guide
 categories: [hochzeitsplanung]
 excerpt: "Warum ein schriftlicher Vertrag mit eurem Hochzeitsfotografen euch beide schützt und was unbedingt darin stehen sollte"
 description: "Fotograf kurzfristig abgesagt? Ein guter Vertrag verhindert genau das. Was zwischen euch und eurem Hochzeitsfotografen schriftlich geregelt sein sollte."
-hero_image: /assets/images/posts/vertrauen-vertrag/marie-claire-martin-am-schreibrisch.webp
-hero_image_alt: "Marie-Claire und Martin am Schreibtisch"
+image: /assets/images/posts/vertrauen-vertrag/marie-claire-martin-am-schreibrisch.webp
+image_alt: "Marie-Claire und Martin am Schreibtisch"
 tags: ["Vertrag", "Hochzeitsfotograf", "Hochzeitsplanung", "Sicherheit", "GutZuWissen"]
 photo_folder: vertrauen-vertrag
 ---

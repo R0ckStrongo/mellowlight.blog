@@ -40,14 +40,14 @@ seo_description: >-
   {%- assign f_cat = site.data.categories | where: 'key', featured.categories.first | first -%}
   <article class="feature -full">
     <a class="feature__link" href="{{ featured.url | relative_url }}">
-      {%- if featured.hero_image %}
+      {%- if featured.image %}
       <div class="feature__media">
         {%- include image.html
-              src=featured.hero_image
-              srcset=featured.hero_image_srcset
-              alt=featured.hero_image_alt
-              width=featured.hero_image_width
-              height=featured.hero_image_height
+              src=featured.image
+              srcset=featured.image_srcset
+              alt=featured.image_alt
+              width=featured.image_width
+              height=featured.image_height
               sizes='100vw'
               eager=true
               class='feature__img' -%}
@@ -91,14 +91,14 @@ seo_description: >-
     <div class="strand__body">
       <article class="strand__lead">
         <a class="card__link" href="{{ lead.url | relative_url }}">
-          {%- if lead.hero_image %}
+          {%- if lead.image %}
           <div class="card__media">
             {%- include image.html
-                  src=lead.hero_image
-                  srcset=lead.hero_image_srcset
-                  alt=lead.hero_image_alt
-                  width=lead.hero_image_width
-                  height=lead.hero_image_height
+                  src=lead.image
+                  srcset=lead.image_srcset
+                  alt=lead.image_alt
+                  width=lead.image_width
+                  height=lead.image_height
                   sizes='(min-width: 60rem) 34rem, 92vw'
                   class='card__img' -%}
           </div>
@@ -116,12 +116,12 @@ seo_description: >-
         {%- for post in rest %}
         <li class="strand__item">
           <a class="strand__item-link" href="{{ post.url | relative_url }}">
-            {%- if post.hero_image %}
+            {%- if post.image %}
             <div class="strand__thumb">
               {%- include image.html
-                    src=post.hero_image
-                    srcset=post.hero_image_srcset
-                    alt=post.hero_image_alt
+                    src=post.image
+                    srcset=post.image_srcset
+                    alt=post.image_alt
                     sizes='120px'
                     class='card__img' -%}
             </div>

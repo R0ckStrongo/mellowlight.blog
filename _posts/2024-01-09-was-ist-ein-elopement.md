@@ -10,8 +10,8 @@ categories: [alternative-hochzeiten, hochzeitsplanung]
 tags: ["Elopement", "Alternative Hochzeit", "Reise"]
 excerpt: "Zu zweit heiraten, ohne Saalplan und Sitzordnung. Was dahintersteckt und für wen es funktioniert."
 description: "Was ein Elopement ist, für wen es passt und was ihr dabei beachten solltet – von der Trauung bis zur Reaktion der Familie."
-hero_image: /assets/images/posts/brautpaar-rennt-strand.webp
-hero_image_alt: "Brautpaar läuft lachend über einen Strand"
+image: /assets/images/posts/brautpaar-rennt-strand.webp
+image_alt: "Brautpaar läuft lachend über einen Strand"
 ---
 
 **Elopement: Die Intime Hochzeit, die immer beliebter wird**

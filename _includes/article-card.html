@@ -6,12 +6,12 @@
 {%- assign cat = site.data.categories | where: 'key', post.categories.first | first -%}
 <article class="card">
   <a class="card__link" href="{{ post.url | relative_url }}">
-    {%- if post.hero_image %}
+    {%- if post.image %}
     <div class="card__media">
       {%- include image.html
-            src=post.hero_image
-            srcset=post.hero_image_srcset
-            alt=post.hero_image_alt
+            src=post.image
+            srcset=post.image_srcset
+            alt=post.image_alt
             sizes='(min-width: 60rem) 22rem, 90vw'
             class='card__img' -%}
     </div>

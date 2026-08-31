@@ -136,7 +136,7 @@ module Mellowlight
   end
 
   # Hero images get the same responsive treatment as gallery images, worked out
-  # from the file itself. Authors write `hero_image:` and nothing else — the
+  # from the file itself. Authors write `image:` and nothing else — the
   # srcset and the real pixel dimensions are never typed by hand (§9, §17).
   class HeroImageGenerator < Jekyll::Generator
     safe true
@@ -144,22 +144,22 @@ module Mellowlight
 
     def generate(site)
       (site.posts.docs + site.pages).each do |doc|
-        hero = doc.data["hero_image"]
+        hero = doc.data["image"]
         next if hero.nil? || hero.to_s.start_with?("http")
 
         absolute = File.join(site.source, hero)
         unless File.file?(absolute)
-          Jekyll.logger.warn "Mellowlight:", "#{doc.relative_path}: hero_image not found at #{hero}"
+          Jekyll.logger.warn "Mellowlight:", "#{doc.relative_path}: image not found at #{hero}"
           next
         end
 
         width, height = ImageMeta.dimensions(absolute)
-        doc.data["hero_image_width"]  ||= width
-        doc.data["hero_image_height"] ||= height
-        doc.data["hero_image_srcset"] ||= ImageMeta.srcset(site, hero)
+        doc.data["image_width"]  ||= width
+        doc.data["image_height"] ||= height
+        doc.data["image_srcset"] ||= ImageMeta.srcset(site, hero)
 
-        if doc.data["hero_image_alt"].to_s.strip.empty?
-          Jekyll.logger.warn "Mellowlight:", "#{doc.relative_path}: hero_image has no alt text"
+        if doc.data["image_alt"].to_s.strip.empty?
+          Jekyll.logger.warn "Mellowlight:", "#{doc.relative_path}: image has no alt text"
         end
       end
     end
